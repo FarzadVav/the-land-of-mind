@@ -12,8 +12,5 @@
   - Experiences
     - Add/Edit (Title, Description)
   - Box (Cloud storage, All, Text, Image, Video, Voice, Audio, File)
-    - Profile
-      - Setting (Advanced Todos mode, Floating AI button, Theme, Logout)
-      - Analysis (Point, Todos (Upcoming, Annual, Future), Experience level, AI summery)
-      - Logout
+  - Profile (Setting (Advanced Todos mode, Floating AI button, Theme, Logout), Analysis (Point, Todos (Upcoming, Annual, Future), Experience level, AI summery), Logout)
   - Floating AI button (Chat, Chats history)

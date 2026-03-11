@@ -2,7 +2,7 @@
   "name": "the-land-of-mind",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev -H 192.168.43.110",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
