@@ -1,9 +1,10 @@
 "use client";
 
 import Link from "next/link";
-import { CheckSquareIcon, ListIcon, NotebookPenIcon, UserCircleIcon } from "lucide-react";
+import { BoxIcon, CheckSquareIcon, ListIcon, NotebookPenIcon } from "lucide-react";
 
 import useActiveHref from "@/hooks/useActiveHref/useActiveHref";
+import FloatingAIButton from "../FloatingAIButton/FloatingAIButton";
 
 function MobileNav() {
   const checkHref = useActiveHref();
@@ -39,9 +40,11 @@ function MobileNav() {
         className={`h-full w-1/3 flex items-center justify-center flex-col gap-1.5 transition-colors
           ${checkHref("/land/profile") ? "active:text-foreground-thin" : "text-foreground-thin active:text-foreground"}`}
       >
-        <UserCircleIcon className="element-icon-size" />
-        <span className="sub-text">Profile</span>
+        <BoxIcon className="element-icon-size" />
+        <span className="sub-text">Box</span>
       </Link>
+
+      <FloatingAIButton className="right-6 bottom-full -translate-y-6" />
     </nav>
   )
 }
