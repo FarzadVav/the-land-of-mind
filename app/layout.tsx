@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 
 function RootLayout({ children }: PropsWithChildren) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" dir="ltr" suppressHydrationWarning>
       <head>
         <ThemeScript />
       </head>
