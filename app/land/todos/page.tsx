@@ -8,6 +8,10 @@ function LandTodosPage() {
           Todos
         </MobileBar.Title>
       </MobileBar>
+
+      <div className="wrapper">
+        Page
+      </div>
     </>
   )
 }

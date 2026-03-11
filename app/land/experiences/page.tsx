@@ -1,6 +1,18 @@
+import MobileBar from "@/components/templates/MobileBar/MobileBar";
+
 function LandExperiencesPage() {
   return (
-    <div>LandExperiencesPage</div>
+    <>
+      <MobileBar>
+        <MobileBar.Title>
+          Experiences
+        </MobileBar.Title>
+      </MobileBar>
+
+      <div className="wrapper">
+        Page
+      </div>
+    </>
   )
 }
 
