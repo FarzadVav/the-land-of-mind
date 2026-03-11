@@ -1,0 +1,32 @@
+{
+  "name": "the-land-of-mind",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@kadoui/tailwindcss": "1.2.11",
+    "@kadoui/react": "2.4.7",
+    "next": "16.1.6",
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
+    "@mantine/hooks": "8.3.14",
+    "framer-motion": "12.31.0",
+    "lucide-react": "0.563.0"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "tailwindcss": "4.1.18",
+    "@tailwindcss/postcss": "4.1.18",
+    "eslint": "^9",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint-config-next": "16.1.6",
+    "prettier-plugin-tailwindcss": "0.7.2"
+  },
+  "packageManager": "pnpm@10.25.0"
+}
