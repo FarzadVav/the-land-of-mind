@@ -1,6 +1,14 @@
+import MobileBar from "@/components/templates/MobileBar/MobileBar";
+
 function LandTodosPage() {
   return (
-    <div>LandTodosPage</div>
+    <>
+      <MobileBar>
+        <MobileBar.Title>
+          Todos
+        </MobileBar.Title>
+      </MobileBar>
+    </>
   )
 }
 

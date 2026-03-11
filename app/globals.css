@@ -98,6 +98,10 @@
 
 @utility wrapper {
   @apply px-6;
+
+  & > .wrapper {
+    @apply px-3;
+  }
 }
 
 @utility heading {
