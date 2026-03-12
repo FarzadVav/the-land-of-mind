@@ -1,6 +1,9 @@
+import { TODOS } from "../../mockData";
+import TodosList from "../TodosList/TodosList";
+
 function AdvancedModeFutureTodos() {
   return (
-    <div>AdvancedModeFutureTodos</div>
+    <TodosList todosListData={TODOS.data} />
   )
 }
 

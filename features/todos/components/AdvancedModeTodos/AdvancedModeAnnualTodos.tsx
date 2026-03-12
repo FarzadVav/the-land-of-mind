@@ -1,6 +1,9 @@
+import { TODOS } from "../../mockData";
+import TodosList from "../TodosList/TodosList";
+
 function AdvancedModeAnnualTodos() {
   return (
-    <div>AdvancedModeAnnualTodos</div>
+    <TodosList todosListData={TODOS.data} />
   )
 }
 
