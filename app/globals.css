@@ -94,15 +94,24 @@
   img {
     @apply pointer-events-none;
   }
+
+  /* TODO: add this to kadoui */
+  * {
+    font-size: var(--element-text) !important;
+    line-height: var(--element-line) !important;
+  }
 }
 
 @utility wrapper {
   @apply px-6;
 
-  & > .wrapper {
+  &>.wrapper {
     @apply px-3;
   }
 }
+
+/* TODO: add this to kadoui */
+/* Typography */
 
 @utility heading {
   @apply element-xl font-black leading-relaxed;
@@ -118,4 +127,10 @@
 
 @utility sub-text {
   @apply element-xs;
+}
+
+/* Customize */
+
+@utility btn-fill {
+  @apply font-bold;
 }
