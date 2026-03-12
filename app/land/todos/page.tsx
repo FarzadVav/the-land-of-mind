@@ -1,7 +1,7 @@
 import { Suspense } from "react";
 
 import MobileBar from "@/components/templates/MobileBar/MobileBar";
-import AdvancedModeTodos from "@/features/todos/components/AdvancedModeTodos/AdvancedModeTodos";
+import TodosTabs from "@/features/todos/components/TodosTabs/TodosTabs";
 
 function LandTodosPage() {
   const isAdvancedTodosMode = true;
@@ -16,7 +16,7 @@ function LandTodosPage() {
 
       {isAdvancedTodosMode ? (
         <Suspense>
-          <AdvancedModeTodos />
+          <TodosTabs />
         </Suspense>
       ) : null}
     </>

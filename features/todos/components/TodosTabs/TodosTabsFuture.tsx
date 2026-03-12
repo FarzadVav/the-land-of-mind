@@ -4,7 +4,7 @@ import { ArrowRightIcon } from "lucide-react";
 import { TODOS } from "../../mockData";
 import TodosList from "../TodosList/TodosList";
 
-function AdvancedModeFutureTodos() {
+function TodosTabsFuture() {
   return (
     <>
       <TodosList todosListData={TODOS.data} />
@@ -20,4 +20,4 @@ function AdvancedModeFutureTodos() {
   )
 }
 
-export default AdvancedModeFutureTodos;
+export default TodosTabsFuture;

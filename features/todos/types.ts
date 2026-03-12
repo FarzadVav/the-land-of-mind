@@ -1,4 +1,4 @@
-export type TodoModeT = "basic"  | "upcoming" | "annual" | "future";
+export type TodoModeT = "daily"  | "weekly" | "monthly" | "annual" | "future";
 
 export type TodoT = {
   id: number;
