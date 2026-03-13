@@ -8,7 +8,7 @@ function LandProfilePage() {
           Profile
         </MobileBar.Title>
 
-        <MobileBar.Link href={"/land/box"} />
+        <MobileBar.Link />
       </MobileBar>
 
       <div className="wrapper">
