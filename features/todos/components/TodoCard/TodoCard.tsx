@@ -88,13 +88,13 @@ function TodoCard({ todoData, historyMode, className }: TodoCardPropsT) {
                 </div>
 
                 {historyMode ? (
-                  <button className="btn btn-fill element-w-full mt-12 element-rounded-full palette-error">
+                  <button className="btn btn-soft element-w-full mt-12 element-rounded-full palette-error">
                     <span>Delete For Ever</span>
                     <Trash2Icon className="element-icon-size" />
                   </button>
                 ) : (
                   <div className="flex mt-12 gap-1.5">
-                    <button className={`btn btn-fill palette-error element-rounded-full ${todoData.isDone ? "element-w-full" : "w-1/3"}`}>
+                    <button className={`btn btn-soft palette-error element-rounded-full ${todoData.isDone ? "element-w-full" : "w-1/3"}`}>
                       <Trash2Icon className="element-icon-size" />
                     </button>
                     {
@@ -102,11 +102,11 @@ function TodoCard({ todoData, historyMode, className }: TodoCardPropsT) {
                         <>
                           <Link
                             href={`land/todos/${todoData.id}`}
-                            className="btn w-1/3 btn-fill palette-primary element-rounded-full"
+                            className="btn w-1/3 btn-soft palette-primary element-rounded-full"
                           >
                             <EditIcon className="element-icon-size" />
                           </Link>
-                          <button className="btn w-1/3 btn-fill palette-success element-rounded-full">
+                          <button className="btn w-1/3 btn-soft palette-success element-rounded-full">
                             <CheckIcon className="element-icon-size" />
                           </button>
                         </>
