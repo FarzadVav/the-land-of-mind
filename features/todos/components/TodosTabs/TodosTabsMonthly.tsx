@@ -2,14 +2,18 @@ import { TODOS } from "../../mockData";
 import { getCurrentMonth } from "@/lib/date";
 import TodosList from "../TodosList/TodosList";
 
-function TodosTabsMonthly() {
+type TodosTabsMonthlyPropsT = {
+  historyMode?: boolean;
+}
+
+function TodosTabsMonthly({ historyMode }: TodosTabsMonthlyPropsT) {
   return (
     <>
       <p className="text-center text-foreground-thin mb-6 mt-3">
         {getCurrentMonth()}
       </p>
 
-      <TodosList todoType="monthly" todosListData={TODOS.data} />
+      <TodosList historyMode={historyMode} todoType="monthly" todosListData={TODOS.data} />
     </>
   )
 }

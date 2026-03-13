@@ -8,30 +8,34 @@ import TodosTabsMonthly from "./TodosTabsMonthly";
 import TodosTabsFuture from "../TodosTabs/TodosTabsFuture";
 import TodosTabsAnnual from "../TodosTabs/TodosTabsAnnual";
 
-const PAGES = [
-  {
-    name: "Daily",
-    component: <TodosTabsDaily />
-  },
-  {
-    name: "Weekly",
-    component: <TodosTabsWeekly />
-  },
-  {
-    name: "Monthly",
-    component: <TodosTabsMonthly />
-  },
-  {
-    name: "Annual",
-    component: <TodosTabsAnnual />
-  },
-  {
-    name: "Future",
-    component: <TodosTabsFuture />
-  },
-]
+type TodosTabsPropsT = {
+  historyMode?: boolean;
+}
 
-function TodosTabs() {
+function TodosTabs({ historyMode }: TodosTabsPropsT) {
+  const PAGES = [
+    {
+      name: "Daily",
+      component: <TodosTabsDaily historyMode={historyMode} />
+    },
+    {
+      name: "Weekly",
+      component: <TodosTabsWeekly historyMode={historyMode} />
+    },
+    {
+      name: "Monthly",
+      component: <TodosTabsMonthly historyMode={historyMode} />
+    },
+    {
+      name: "Annual",
+      component: <TodosTabsAnnual historyMode={historyMode} />
+    },
+    {
+      name: "Future",
+      component: <TodosTabsFuture historyMode={historyMode} />
+    },
+  ];
+
   return (
     <PaginationWithSearchParams className="wrapper" pages={PAGES} pageKey="mode">
       <div className="flex items-center join join-border overflow-x-auto pb-3">

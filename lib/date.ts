@@ -41,5 +41,5 @@ export const getCurrentYear = () => {
 }
 
 export const getTodoDate = (date: string) => {
-  return `${getCurrentDay(date)}, ${new Date(date).getHours()}:${new Date(date).getMinutes()}`
+  return `${getCurrentDay(date)}, ${new Date(date).getHours().toString().padStart(2, "0")}:${new Date(date).getMinutes().toString().padStart(2, "0") }`
 }

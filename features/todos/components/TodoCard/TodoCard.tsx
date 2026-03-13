@@ -1,17 +1,18 @@
+import Link from "next/link";
 import { Sheet } from "@kadoui/react";
 import { ComponentProps } from "react";
 import { cn } from "@kadoui/react/utils";
-import { CheckIcon, EditIcon, MoreVerticalIcon, TrashIcon } from "lucide-react";
+import { CheckIcon, EditIcon, MoreVerticalIcon, Trash2Icon } from "lucide-react";
 
 import { TodoT } from "../../types";
-import Link from "next/link";
 import { getTodoDate } from "@/lib/date";
 
 type TodoCardPropsT = ComponentProps<"div"> & {
   todoData: TodoT;
+  historyMode?: boolean;
 }
 
-function TodoCard({ todoData, className }: TodoCardPropsT) {
+function TodoCard({ todoData, historyMode, className }: TodoCardPropsT) {
   return (
     <div
       className={cn(
@@ -44,7 +45,7 @@ function TodoCard({ todoData, className }: TodoCardPropsT) {
                     <p className="title">Deadline</p>
                     <p className="text-foreground-thin">{getTodoDate(todoData.deadline)}</p>
                   </div>
-                  {todoData.doneAt ? (
+                  {todoData.isDone && todoData.doneAt ? (
                     <div className="flex items-start justify-between gap-3">
                       <p className="title text-primary">Done At</p>
                       <p className="text-foreground-thin">{getTodoDate(todoData.doneAt)}</p>
@@ -86,37 +87,54 @@ function TodoCard({ todoData, className }: TodoCardPropsT) {
                   )}
                 </div>
 
-                <div className="flex mt-12 gap-1.5">
-                  <button className={`btn btn-fill palette-error element-rounded-full ${todoData.isDone ? "element-w-full" : "w-1/3"}`}>
-                    <TrashIcon className="element-icon-size" />
+                {historyMode ? (
+                  <button className="btn btn-fill element-w-full mt-12 element-rounded-full palette-error">
+                    <span>Delete For Ever</span>
+                    <Trash2Icon className="element-icon-size" />
                   </button>
-                  {
-                    todoData.isDone ? null : (
-                      <>
-                        <Link
-                          href={`land/todos/${todoData.id}`}
-                          className="btn w-1/3 btn-fill palette-primary element-rounded-full"
-                        >
-                          <EditIcon className="element-icon-size" />
-                        </Link>
-                        <button className="btn w-1/3 btn-fill palette-success element-rounded-full">
-                          <CheckIcon className="element-icon-size" />
-                        </button>
-                      </>
-                    )
-                  }
-                </div>
+                ) : (
+                  <div className="flex mt-12 gap-1.5">
+                    <button className={`btn btn-fill palette-error element-rounded-full ${todoData.isDone ? "element-w-full" : "w-1/3"}`}>
+                      <Trash2Icon className="element-icon-size" />
+                    </button>
+                    {
+                      todoData.isDone ? null : (
+                        <>
+                          <Link
+                            href={`land/todos/${todoData.id}`}
+                            className="btn w-1/3 btn-fill palette-primary element-rounded-full"
+                          >
+                            <EditIcon className="element-icon-size" />
+                          </Link>
+                          <button className="btn w-1/3 btn-fill palette-success element-rounded-full">
+                            <CheckIcon className="element-icon-size" />
+                          </button>
+                        </>
+                      )
+                    }
+                  </div>
+                )}
               </Sheet.Content>
             </Sheet.Body>
           </Sheet.Portal>
         </Sheet>
       </div>
-      <p className="sub-text">
-        <span>Deadline:</span>{" "}
-        <span className="text-foreground-thin">
-          {getTodoDate(todoData.deadline)}
-        </span>
-      </p>
+      <div className="flex items-center gap-3 flex-wrap">
+        <p className="sub-text">
+          <span>Deadline:</span>{" "}
+          <span className="text-foreground-thin">
+            {getTodoDate(todoData.deadline)}
+          </span>
+        </p>
+        {todoData.isDone && todoData.doneAt ? (
+          <p className="sub-text">
+            <span>Done at:</span>{" "}
+            <span className="text-foreground-thin">
+              {getTodoDate(todoData.doneAt)}
+            </span>
+          </p>
+        ) : null}
+      </div>
     </div>
   )
 }

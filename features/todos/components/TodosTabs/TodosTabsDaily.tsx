@@ -2,14 +2,18 @@ import { TODOS } from "../../mockData";
 import { getCurrentDay } from "@/lib/date";
 import TodosList from "../TodosList/TodosList";
 
-function TodosTabsDaily() {
+type TodosTabsDailyPropsT = {
+  historyMode?: boolean;
+}
+
+function TodosTabsDaily({ historyMode }: TodosTabsDailyPropsT) {
   return (
     <>
       <p className="text-center text-foreground-thin mb-6 mt-3">
         {getCurrentDay()}
       </p>
 
-      <TodosList todoType="daily" todosListData={TODOS.data} />
+      <TodosList historyMode={historyMode} todoType="daily" todosListData={TODOS.data} />
     </>
   )
 }
