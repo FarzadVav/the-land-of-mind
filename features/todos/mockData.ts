@@ -6,23 +6,27 @@ export const TODOS: ApiResponseT<TodoT[]> = {
     {
       id: 1,
       title: "Reach the 90kg body",
-      deadline: new Date().toLocaleDateString(),
-      createdAt: new Date().toLocaleDateString(),
-      updatedAt: new Date().toLocaleDateString(),
+      isDone: false,
+      doneAt: null,
+      deadline: new Date().toLocaleString(),
+      createdAt: new Date().toLocaleString(),
+      updatedAt: new Date().toLocaleString(),
       description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae accusamus consequuntur possimus placeat repudiandae illo reprehenderit aperiam tempora neque voluptates, dolorum quos porro",
       type: "daily", // Should be dynamic
       subTasks: [
-        { id: 1, title: "Signin to a gym" },
-        { id: 2, title: "Buy creatin powder" },
-        { id: 3, title: "Find a gym bro" },
+        { id: 1, title: "Signin to a gym", isDone: true },
+        { id: 2, title: "Buy creatin powder", isDone: true },
+        { id: 3, title: "Find a gym bro", isDone: false },
       ]
     },
     {
       id: 2,
       title: "Learn Java and Kotling languages",
-      deadline: new Date().toLocaleDateString(),
-      createdAt: new Date().toLocaleDateString(),
-      updatedAt: new Date().toLocaleDateString(),
+      isDone: false,
+      doneAt: null,
+      deadline: new Date().toLocaleString(),
+      createdAt: new Date().toLocaleString(),
+      updatedAt: new Date().toLocaleString(),
       description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae accusamus consequuntur possimus placeat repudiandae illo reprehenderit aperiam tempora neque voluptates, dolorum quos porro",
       type: "daily", // Should be dynamic
       subTasks: null
@@ -30,9 +34,11 @@ export const TODOS: ApiResponseT<TodoT[]> = {
     {
       id: 3,
       title: "Buy iPhone 17 Pro Max",
-      deadline: new Date().toLocaleDateString(),
-      createdAt: new Date().toLocaleDateString(),
-      updatedAt: new Date().toLocaleDateString(),
+      isDone: false,
+      doneAt: null,
+      deadline: new Date().toLocaleString(),
+      createdAt: new Date().toLocaleString(),
+      updatedAt: new Date().toLocaleString(),
       description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae accusamus consequuntur possimus placeat repudiandae illo reprehenderit aperiam tempora neque voluptates, dolorum quos porro",
       type: "daily", // Should be dynamic
       subTasks: null
@@ -40,9 +46,11 @@ export const TODOS: ApiResponseT<TodoT[]> = {
     {
       id: 4,
       title: "Finish the project",
-      deadline: new Date().toLocaleDateString(),
-      createdAt: new Date().toLocaleDateString(),
-      updatedAt: new Date().toLocaleDateString(),
+      isDone: false,
+      doneAt: null,
+      deadline: new Date().toLocaleString(),
+      createdAt: new Date().toLocaleString(),
+      updatedAt: new Date().toLocaleString(),
       description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae accusamus consequuntur possimus placeat repudiandae illo reprehenderit aperiam tempora neque voluptates, dolorum quos porro",
       type: "daily", // Should be dynamic
       subTasks: null
@@ -50,9 +58,11 @@ export const TODOS: ApiResponseT<TodoT[]> = {
     {
       id: 5,
       title: "Get the salary from company",
-      deadline: new Date().toLocaleDateString(),
-      createdAt: new Date().toLocaleDateString(),
-      updatedAt: new Date().toLocaleDateString(),
+      isDone: false,
+      doneAt: null,
+      deadline: new Date().toLocaleString(),
+      createdAt: new Date().toLocaleString(),
+      updatedAt: new Date().toLocaleString(),
       description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae accusamus consequuntur possimus placeat repudiandae illo reprehenderit aperiam tempora neque voluptates, dolorum quos porro",
       type: "daily", // Should be dynamic
       subTasks: null
@@ -60,9 +70,11 @@ export const TODOS: ApiResponseT<TodoT[]> = {
     {
       id: 6,
       title: "Repair the car",
-      deadline: new Date().toLocaleDateString(),
-      createdAt: new Date().toLocaleDateString(),
-      updatedAt: new Date().toLocaleDateString(),
+      isDone: true,
+      doneAt: new Date().toLocaleString(),
+      deadline: new Date().toLocaleString(),
+      createdAt: new Date().toLocaleString(),
+      updatedAt: new Date().toLocaleString(),
       description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae accusamus consequuntur possimus placeat repudiandae illo reprehenderit aperiam tempora neque voluptates, dolorum quos porro",
       type: "daily", // Should be dynamic
       subTasks: null

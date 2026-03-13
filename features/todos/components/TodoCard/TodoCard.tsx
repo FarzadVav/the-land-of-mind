@@ -5,6 +5,7 @@ import { CheckIcon, EditIcon, MoreVerticalIcon, TrashIcon } from "lucide-react";
 
 import { TodoT } from "../../types";
 import Link from "next/link";
+import { getTodoDate } from "@/lib/date";
 
 type TodoCardPropsT = ComponentProps<"div"> & {
   todoData: TodoT;
@@ -19,7 +20,7 @@ function TodoCard({ todoData, className }: TodoCardPropsT) {
       )}
     >
       <div className="flex items-center justify-between gap-3">
-        <p>
+        <p className={todoData.isDone ? "line-through text-foreground-thin" : ""}>
           {todoData.title}
         </p>
         <Sheet>
@@ -37,19 +38,25 @@ function TodoCard({ todoData, className }: TodoCardPropsT) {
                 <div className="space-y-3">
                   <div className="flex items-start justify-between gap-3">
                     <p className="title">Title</p>
-                    <p className="text-foreground-thin">{todoData.title}</p>
+                    <p className={`text-foreground-thin ${todoData.isDone ? "line-through" : ""}`}>{todoData.title}</p>
                   </div>
                   <div className="flex items-start justify-between gap-3">
                     <p className="title">Deadline</p>
-                    <p className="text-foreground-thin">{new Date(todoData.deadline).toLocaleDateString()}</p>
+                    <p className="text-foreground-thin">{getTodoDate(todoData.deadline)}</p>
                   </div>
+                  {todoData.doneAt ? (
+                    <div className="flex items-start justify-between gap-3">
+                      <p className="title text-primary">Done At</p>
+                      <p className="text-foreground-thin">{getTodoDate(todoData.doneAt)}</p>
+                    </div>
+                  ) : null}
                   <div className="flex items-start justify-between gap-3">
                     <p className="title">Create date</p>
-                    <p className="text-foreground-thin">{new Date(todoData.createdAt).toLocaleDateString()}</p>
+                    <p className="text-foreground-thin">{getTodoDate(todoData.createdAt)}</p>
                   </div>
                   <div className="flex items-start justify-between gap-3">
                     <p className="title">Last update</p>
-                    <p className="text-foreground-thin">{new Date(todoData.updatedAt).toLocaleDateString()}</p>
+                    <p className="text-foreground-thin">{getTodoDate(todoData.updatedAt)}</p>
                   </div>
                   <div className="flex items-start justify-between gap-3">
                     <p className="title">Description</p>
@@ -61,28 +68,43 @@ function TodoCard({ todoData, className }: TodoCardPropsT) {
                 <div className="space-y-3 mt-3">
                   {todoData.subTasks?.length ? todoData.subTasks.map(item => (
                     <div key={item.id} className="card card-x border border-background-thin element-sm">
-                      <p>{item.title}</p>
-                      {/* <button className="btn btn-outline element-square-size element-rounded-full element-xs"></button> */}
-                      <button className="btn btn-fill element-square-size element-rounded-full element-xs shrink-0">
-                        <CheckIcon className="element-icon-size" />
-                      </button>
+                      <p className={item.isDone ? "line-through text-foreground-thin" : ""}>
+                        {item.title}
+                      </p>
+                      {item.isDone ? (
+                        <button className="btn btn-fill element-square-size element-rounded-full element-xs shrink-0">
+                          <CheckIcon className="element-icon-size" />
+                        </button>
+                      ) : (
+                        <button className="btn btn-outline element-square-size element-rounded-full element-xs"></button>
+                      )}
                     </div>
-                  )) : "Nothing"}
+                  )) : (
+                    <div className="card card-x justify-center border-2 border-dashed border-background-thin">
+                      <p>Nothing</p>
+                    </div>
+                  )}
                 </div>
 
                 <div className="flex mt-12 gap-1.5">
-                  <button className="btn w-1/3 btn-fill palette-error element-rounded-full">
+                  <button className={`btn btn-fill palette-error element-rounded-full ${todoData.isDone ? "element-w-full" : "w-1/3"}`}>
                     <TrashIcon className="element-icon-size" />
                   </button>
-                  <Link
-                    href={`land/todos/${todoData.id}`}
-                    className="btn w-1/3 btn-fill palette-primary element-rounded-full"
-                  >
-                    <EditIcon className="element-icon-size" />
-                  </Link>
-                  <button className="btn w-1/3 btn-fill palette-success element-rounded-full">
-                    <CheckIcon className="element-icon-size" />
-                  </button>
+                  {
+                    todoData.isDone ? null : (
+                      <>
+                        <Link
+                          href={`land/todos/${todoData.id}`}
+                          className="btn w-1/3 btn-fill palette-primary element-rounded-full"
+                        >
+                          <EditIcon className="element-icon-size" />
+                        </Link>
+                        <button className="btn w-1/3 btn-fill palette-success element-rounded-full">
+                          <CheckIcon className="element-icon-size" />
+                        </button>
+                      </>
+                    )
+                  }
                 </div>
               </Sheet.Content>
             </Sheet.Body>
@@ -92,7 +114,7 @@ function TodoCard({ todoData, className }: TodoCardPropsT) {
       <p className="sub-text">
         <span>Deadline:</span>{" "}
         <span className="text-foreground-thin">
-          {new Date(todoData.deadline).toLocaleDateString()}
+          {getTodoDate(todoData.deadline)}
         </span>
       </p>
     </div>

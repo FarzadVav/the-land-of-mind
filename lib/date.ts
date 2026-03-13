@@ -2,7 +2,7 @@ export const getCurrentMonth = () => {
   return new Date().toString().split(" ")[1];
 }
 
-export const getCurrentDay = (date?: Date) => {
+export const getCurrentDay = (date?: string) => {
   return new Date(date || new Date()).toString().split(" ").slice(0, 3).join(" ");
 }
 
@@ -11,7 +11,7 @@ export const getFutureDateByDate = (dayCount: number) => {
 }
 
 export const getRangeDateByDay = (dayCount: number) => {
-  return `${getCurrentDay()} - ${getCurrentDay(getFutureDateByDate(dayCount))}`;
+  return `${getCurrentDay()} - ${getCurrentDay(getFutureDateByDate(dayCount).toString())}`;
 }
 
 export const getCurrentWeek = () => {
@@ -38,4 +38,8 @@ export const getCurrentWeek = () => {
 
 export const getCurrentYear = () => {
   return new Date().getFullYear();
+}
+
+export const getTodoDate = (date: string) => {
+  return `${getCurrentDay(date)}, ${new Date(date).getHours()}:${new Date(date).getMinutes()}`
 }
