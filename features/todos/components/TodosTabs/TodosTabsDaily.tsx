@@ -18,7 +18,7 @@ function TodosTabsDaily() {
         href={"/land/todos/history?mode=daily"}
         className="btn btn-soft element-rounded-full mx-auto mt-12"
       >
-        <span>Daily todos History</span>
+        <span>Daily Todos History</span>
         <ArrowRightIcon className="element-icon-size" />
       </Link>
     </>

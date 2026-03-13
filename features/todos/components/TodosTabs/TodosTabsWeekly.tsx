@@ -18,7 +18,7 @@ function TodosTabsWeekly() {
         href={"/land/todos/history?mode=weekly"}
         className="btn btn-soft element-rounded-full mx-auto mt-12"
       >
-        <span>Weekly todos History</span>
+        <span>Weekly Todos History</span>
         <ArrowRightIcon className="element-icon-size" />
       </Link>
     </>

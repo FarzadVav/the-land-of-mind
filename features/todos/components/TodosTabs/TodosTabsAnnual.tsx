@@ -18,7 +18,7 @@ function TodosTabsAnnual() {
         href={"/land/todos/history?mode=annual"}
         className="btn btn-soft element-rounded-full mx-auto mt-12"
       >
-        <span>Annual todos History</span>
+        <span>Annual Todos History</span>
         <ArrowRightIcon className="element-icon-size" />
       </Link>
     </>

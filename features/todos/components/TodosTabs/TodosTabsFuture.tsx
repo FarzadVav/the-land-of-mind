@@ -13,7 +13,7 @@ function TodosTabsFuture() {
         href={"/land/todos/history?mode=future"}
         className="btn btn-soft element-rounded-full mx-auto mt-12"
       >
-        <span>Future todos History</span>
+        <span>Future Todos History</span>
         <ArrowRightIcon className="element-icon-size" />
       </Link>
     </>

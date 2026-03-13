@@ -18,7 +18,7 @@ function TodosTabsMonthly() {
         href={"/land/todos/history?mode=monthly"}
         className="btn btn-soft element-rounded-full mx-auto mt-12"
       >
-        <span>Monthly todos History</span>
+        <span>Monthly Todos History</span>
         <ArrowRightIcon className="element-icon-size" />
       </Link>
     </>

@@ -1,4 +1,6 @@
+import Link from "next/link";
 import { Suspense } from "react";
+import { PlusIcon } from "lucide-react";
 
 import MobileBar from "@/components/templates/MobileBar/MobileBar";
 import TodosTabs from "@/features/todos/components/TodosTabs/TodosTabs";
@@ -19,6 +21,14 @@ function LandTodosPage() {
           <TodosTabs />
         </Suspense>
       ) : null}
+
+      <Link
+        href={"/land/todos/new"}
+        className="btn btn-soft element-rounded-full palette-primary mx-auto mt-6"
+      >
+        <span>New Todo</span>
+        <PlusIcon className="element-icon-size" />
+      </Link>
     </>
   )
 }
