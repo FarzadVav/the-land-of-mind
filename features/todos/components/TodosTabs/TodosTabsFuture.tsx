@@ -1,21 +1,10 @@
-import Link from "next/link";
-import { ArrowRightIcon } from "lucide-react";
-
 import { TODOS } from "../../mockData";
 import TodosList from "../TodosList/TodosList";
 
 function TodosTabsFuture() {
   return (
     <>
-      <TodosList todosListData={TODOS.data} />
-
-      <Link
-        href={"/land/todos/history?mode=future"}
-        className="btn btn-soft element-rounded-full mx-auto mt-12"
-      >
-        <span>Future Todos History</span>
-        <ArrowRightIcon className="element-icon-size" />
-      </Link>
+      <TodosList todoType="future" todosListData={TODOS.data} />
     </>
   )
 }

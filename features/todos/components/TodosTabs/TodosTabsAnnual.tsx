@@ -1,6 +1,3 @@
-import Link from "next/link";
-import { ArrowRightIcon } from "lucide-react";
-
 import { TODOS } from "../../mockData";
 import { getCurrentYear } from "@/lib/date";
 import TodosList from "../TodosList/TodosList";
@@ -12,15 +9,7 @@ function TodosTabsAnnual() {
         {getCurrentYear()}
       </p>
 
-      <TodosList todosListData={TODOS.data} />
-
-      <Link
-        href={"/land/todos/history?mode=annual"}
-        className="btn btn-soft element-rounded-full mx-auto mt-12"
-      >
-        <span>Annual Todos History</span>
-        <ArrowRightIcon className="element-icon-size" />
-      </Link>
+      <TodosList todoType="annual" todosListData={TODOS.data} />
     </>
   )
 }

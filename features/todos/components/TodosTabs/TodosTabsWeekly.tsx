@@ -1,9 +1,6 @@
-import Link from "next/link";
-import { ArrowRightIcon } from "lucide-react";
-
 import { TODOS } from "../../mockData";
-import TodosList from "../TodosList/TodosList";
 import { getCurrentWeek } from "@/lib/date";
+import TodosList from "../TodosList/TodosList";
 
 function TodosTabsWeekly() {
   return (
@@ -12,15 +9,7 @@ function TodosTabsWeekly() {
         {getCurrentWeek()}
       </p>
 
-      <TodosList todosListData={TODOS.data} />
-
-      <Link
-        href={"/land/todos/history?mode=weekly"}
-        className="btn btn-soft element-rounded-full mx-auto mt-12"
-      >
-        <span>Weekly Todos History</span>
-        <ArrowRightIcon className="element-icon-size" />
-      </Link>
+      <TodosList todoType="weekly" todosListData={TODOS.data} />
     </>
   )
 }

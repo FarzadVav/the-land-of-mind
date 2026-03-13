@@ -1,4 +1,4 @@
-export type TodoModeT = "daily"  | "weekly" | "monthly" | "annual" | "future";
+export type TodoTypeT = "daily" | "weekly" | "monthly" | "annual" | "future";
 
 export type TodoT = {
   id: number;
@@ -8,7 +8,7 @@ export type TodoT = {
   updatedAt: string;
   description: string | null;
 
-  mode: TodoModeT;
+  type: TodoTypeT;
   subTasks: TodoSubTaskT[] | null;
 }
 

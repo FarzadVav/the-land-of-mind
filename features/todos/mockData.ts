@@ -10,7 +10,7 @@ export const TODOS: ApiResponseT<TodoT[]> = {
       createdAt: new Date().toLocaleDateString(),
       updatedAt: new Date().toLocaleDateString(),
       description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae accusamus consequuntur possimus placeat repudiandae illo reprehenderit aperiam tempora neque voluptates, dolorum quos porro",
-      mode: "daily", // Should be dynamic
+      type: "daily", // Should be dynamic
       subTasks: [
         { id: 1, title: "Signin to a gym" },
         { id: 2, title: "Buy creatin powder" },
@@ -24,7 +24,7 @@ export const TODOS: ApiResponseT<TodoT[]> = {
       createdAt: new Date().toLocaleDateString(),
       updatedAt: new Date().toLocaleDateString(),
       description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae accusamus consequuntur possimus placeat repudiandae illo reprehenderit aperiam tempora neque voluptates, dolorum quos porro",
-      mode: "daily", // Should be dynamic
+      type: "daily", // Should be dynamic
       subTasks: null
     },
     {
@@ -34,7 +34,7 @@ export const TODOS: ApiResponseT<TodoT[]> = {
       createdAt: new Date().toLocaleDateString(),
       updatedAt: new Date().toLocaleDateString(),
       description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae accusamus consequuntur possimus placeat repudiandae illo reprehenderit aperiam tempora neque voluptates, dolorum quos porro",
-      mode: "daily", // Should be dynamic
+      type: "daily", // Should be dynamic
       subTasks: null
     },
     {
@@ -44,7 +44,7 @@ export const TODOS: ApiResponseT<TodoT[]> = {
       createdAt: new Date().toLocaleDateString(),
       updatedAt: new Date().toLocaleDateString(),
       description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae accusamus consequuntur possimus placeat repudiandae illo reprehenderit aperiam tempora neque voluptates, dolorum quos porro",
-      mode: "daily", // Should be dynamic
+      type: "daily", // Should be dynamic
       subTasks: null
     },
     {
@@ -54,7 +54,7 @@ export const TODOS: ApiResponseT<TodoT[]> = {
       createdAt: new Date().toLocaleDateString(),
       updatedAt: new Date().toLocaleDateString(),
       description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae accusamus consequuntur possimus placeat repudiandae illo reprehenderit aperiam tempora neque voluptates, dolorum quos porro",
-      mode: "daily", // Should be dynamic
+      type: "daily", // Should be dynamic
       subTasks: null
     },
     {
@@ -64,7 +64,7 @@ export const TODOS: ApiResponseT<TodoT[]> = {
       createdAt: new Date().toLocaleDateString(),
       updatedAt: new Date().toLocaleDateString(),
       description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae accusamus consequuntur possimus placeat repudiandae illo reprehenderit aperiam tempora neque voluptates, dolorum quos porro",
-      mode: "daily", // Should be dynamic
+      type: "daily", // Should be dynamic
       subTasks: null
     },
   ],
