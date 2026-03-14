@@ -1,20 +1,20 @@
 import MobileBar from "@/components/templates/MobileBar/MobileBar";
-import NewAndEditTodoForm from "@/features/todos/components/NewAndEditTodoForm/NewAndEditTodoForm";
+import NewAndEditHabitForm from "@/features/habits/components/NewAndEditHabitForm/NewAndEditHabitForm";
 
-function LandNewTodoPage() {
+function LandNewHabitPage() {
   return (
     <>
       <MobileBar>
         <MobileBar.Title>
-          New Todo
+          New Habit
         </MobileBar.Title>
 
         <MobileBar.Link />
       </MobileBar>
 
-      <NewAndEditTodoForm />
+      <NewAndEditHabitForm />
     </>
   )
 }
 
-export default LandNewTodoPage;
+export default LandNewHabitPage;

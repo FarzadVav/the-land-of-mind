@@ -5,7 +5,7 @@ import { cn } from "@kadoui/react/utils";
 import { CheckIcon, EditIcon, MoreVerticalIcon, Trash2Icon } from "lucide-react";
 
 import { TodoT } from "../../types";
-import { getTodoDate } from "@/lib/date";
+import { getDetailDate } from "@/lib/date";
 
 type TodoCardPropsT = ComponentProps<"div"> & {
   todoData: TodoT;
@@ -43,21 +43,21 @@ function TodoCard({ todoData, historyMode, className }: TodoCardPropsT) {
                   </div>
                   <div className="flex items-start justify-between gap-3">
                     <p className="title">Deadline</p>
-                    <p className="text-foreground-thin">{getTodoDate(todoData.deadline)}</p>
+                    <p className="text-foreground-thin">{getDetailDate(todoData.deadline)}</p>
                   </div>
                   {todoData.isDone && todoData.doneAt ? (
                     <div className="flex items-start justify-between gap-3">
                       <p className="title text-primary">Done At</p>
-                      <p className="text-foreground-thin">{getTodoDate(todoData.doneAt)}</p>
+                      <p className="text-foreground-thin">{getDetailDate(todoData.doneAt)}</p>
                     </div>
                   ) : null}
                   <div className="flex items-start justify-between gap-3">
                     <p className="title">Create date</p>
-                    <p className="text-foreground-thin">{getTodoDate(todoData.createdAt)}</p>
+                    <p className="text-foreground-thin">{getDetailDate(todoData.createdAt)}</p>
                   </div>
                   <div className="flex items-start justify-between gap-3">
                     <p className="title">Last update</p>
-                    <p className="text-foreground-thin">{getTodoDate(todoData.updatedAt)}</p>
+                    <p className="text-foreground-thin">{getDetailDate(todoData.updatedAt)}</p>
                   </div>
                   <div className="flex items-start justify-between gap-3">
                     <p className="title">Description</p>
@@ -101,7 +101,7 @@ function TodoCard({ todoData, historyMode, className }: TodoCardPropsT) {
                       todoData.isDone ? null : (
                         <>
                           <Link
-                            href={`land/todos/${todoData.id}`}
+                            href={`/land/todos/${todoData.id}`}
                             className="btn w-1/3 btn-soft palette-primary element-rounded-full"
                           >
                             <EditIcon className="element-icon-size" />
@@ -123,14 +123,14 @@ function TodoCard({ todoData, historyMode, className }: TodoCardPropsT) {
         <p className="sub-text">
           <span>Deadline:</span>{" "}
           <span className="text-foreground-thin">
-            {getTodoDate(todoData.deadline)}
+            {getDetailDate(todoData.deadline)}
           </span>
         </p>
         {todoData.isDone && todoData.doneAt ? (
           <p className="sub-text">
             <span>Done at:</span>{" "}
             <span className="text-foreground-thin">
-              {getTodoDate(todoData.doneAt)}
+              {getDetailDate(todoData.doneAt)}
             </span>
           </p>
         ) : null}

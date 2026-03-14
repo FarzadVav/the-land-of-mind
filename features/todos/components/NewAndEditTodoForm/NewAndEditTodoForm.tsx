@@ -1,9 +1,9 @@
 "use client";
 
 import { useSearchParams } from "next/navigation";
-import { SubmitEventHandler, useEffect, useState } from "react";
 import { SelectBox, SelectBoxOptionT } from "@kadoui/react";
-import { CheckIcon, ChevronDownIcon, SearchIcon } from "lucide-react";
+import { SubmitEventHandler, useEffect, useState } from "react";
+import { PlusIcon, ChevronDownIcon, EditIcon, SearchIcon } from "lucide-react";
 
 import { TODO_TYPES } from "../../constants";
 import { ConstantT } from "@/types/app.types";
@@ -13,9 +13,16 @@ import InputLabel from "@/components/ui/InputLabel/InputLabel";
 const HABITS_CONSTANT: ConstantT<string>[] = HABITS.data.map(item => ({
   name: item.title,
   value: item.id.toString()
-}))
+}));
 
-function NewTodoForm() {
+type NewAndEditTodoFormPropsT = {
+  todoId?: number;
+  isEditMode?: boolean;
+}
+
+function NewAndEditTodoForm({ todoId, isEditMode }: NewAndEditTodoFormPropsT) {
+  console.log(todoId);
+
   const sp = useSearchParams();
 
   const [selectedType, setSelectedType] =
@@ -29,7 +36,7 @@ function NewTodoForm() {
     if (defaultType) {
       setSelectedType(defaultType);
     }
-  }, [sp])
+  }, [sp]);
 
   // TODO: add zod validation
   const submitHandler: SubmitEventHandler<HTMLFormElement> = (ev) => {
@@ -51,8 +58,8 @@ function NewTodoForm() {
 
   return (
     <form
-      onSubmit={submitHandler}
       className="wrapper"
+      onSubmit={submitHandler}
     >
       <InputLabel required htmlFor="title">
         Title
@@ -181,11 +188,13 @@ function NewTodoForm() {
       ) : null}
 
       <button className="btn btn-soft element-rounded-full mx-auto palette-success mt-12">
-        <span>Submit</span>
-        <CheckIcon />
+        <span>
+          {isEditMode ? "Edit" : "Create"}
+        </span>
+        {isEditMode ? <EditIcon className="element-icon-size" /> : <PlusIcon className="element-icon-size" />}
       </button>
     </form>
   )
 }
 
-export default NewTodoForm;
+export default NewAndEditTodoForm;

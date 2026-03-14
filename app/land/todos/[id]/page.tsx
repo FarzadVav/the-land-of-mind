@@ -1,20 +1,25 @@
+import { NextPagePropsT } from "@/types/app.types";
 import MobileBar from "@/components/templates/MobileBar/MobileBar";
 import NewAndEditTodoForm from "@/features/todos/components/NewAndEditTodoForm/NewAndEditTodoForm";
 
-function LandNewTodoPage() {
+async function LandEditTodoPage({ params }: NextPagePropsT) {
+  const p = await params;
+
+  const todoId = +(p.id as string);
+
   return (
     <>
       <MobileBar>
         <MobileBar.Title>
-          New Todo
+          Edit Habit
         </MobileBar.Title>
 
         <MobileBar.Link />
       </MobileBar>
 
-      <NewAndEditTodoForm />
+      <NewAndEditTodoForm todoId={todoId} isEditMode />
     </>
   )
 }
 
-export default LandNewTodoPage;
+export default LandEditTodoPage;

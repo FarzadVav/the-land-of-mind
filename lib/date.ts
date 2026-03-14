@@ -40,6 +40,6 @@ export const getCurrentYear = () => {
   return new Date().getFullYear();
 }
 
-export const getTodoDate = (date: string) => {
-  return `${getCurrentDay(date)}, ${new Date(date).getHours().toString().padStart(2, "0")}:${new Date(date).getMinutes().toString().padStart(2, "0") }`
+export const getDetailDate = (date: string) => {
+  return `${getCurrentDay(date)}, ${new Date(date).getHours().toString().padStart(2, "0")}:${new Date(date).getMinutes().toString().padStart(2, "0")}`
 }

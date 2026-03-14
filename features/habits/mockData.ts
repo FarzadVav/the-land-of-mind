@@ -6,18 +6,27 @@ export const HABITS: ApiResponseT<HabitT[]> = {
     {
       id: 1,
       title: "Wake up at 05:00 am",
-      description: null
+      createdAt: new Date().toLocaleString(),
+      updatedAt: new Date().toLocaleString(),
+      description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae accusamus consequuntur possimus placeat repudiandae illo reprehenderit aperiam tempora neque voluptates, dolorum quos porro",
+      ingage: "day"
     },
     {
       id: 2,
-      title: "Read 10 papers of a book",
-      description: null
+      title: "Read English language",
+      createdAt: new Date().toLocaleString(),
+      updatedAt: new Date().toLocaleString(),
+      description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae accusamus consequuntur possimus placeat repudiandae illo reprehenderit aperiam tempora neque voluptates, dolorum quos porro",
+      ingage: "week"
     },
     {
       id: 3,
-      title: "Read English language",
-      description: null
-    },
+      title: "Eat D3000 Vitamin",
+      createdAt: new Date().toLocaleString(),
+      updatedAt: new Date().toLocaleString(),
+      description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae accusamus consequuntur possimus placeat repudiandae illo reprehenderit aperiam tempora neque voluptates, dolorum quos porro",
+      ingage: "month"
+    }
   ],
   errors: null
 };

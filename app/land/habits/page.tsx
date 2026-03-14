@@ -1,4 +1,5 @@
 import MobileBar from "@/components/templates/MobileBar/MobileBar";
+import HabitsList from "@/features/habits/components/HabitsList/HabitsList";
 
 function LandHabitsPage() {
   return (
@@ -9,9 +10,7 @@ function LandHabitsPage() {
         </MobileBar.Title>
       </MobileBar>
 
-      <div className="wrapper">
-        Page
-      </div>
+      <HabitsList />
     </>
   )
 }
