@@ -1,7 +1,7 @@
 "use client";
 
 import { useSearchParams } from "next/navigation";
-import { SubmitEventHandler, useState } from "react";
+import { SubmitEventHandler, useEffect, useState } from "react";
 import { SelectBox, SelectBoxOptionT } from "@kadoui/react";
 import { CheckIcon, ChevronDownIcon, SearchIcon } from "lucide-react";
 
@@ -18,13 +18,18 @@ const HABITS_CONSTANT: ConstantT<string>[] = HABITS.data.map(item => ({
 function NewTodoForm() {
   const sp = useSearchParams();
 
-  const spType = sp.get("type");
-  const defaultType = TODO_TYPES.find(item => item.value === spType);
-
   const [selectedType, setSelectedType] =
-    useState<SelectBoxOptionT | null>(defaultType || null);
+    useState<SelectBoxOptionT | null>(null);
   const [selectedHabits, setSelectedHabits] =
     useState<SelectBoxOptionT[]>([]);
+
+  useEffect(() => {
+    const spType = sp.get("type");
+    const defaultType = TODO_TYPES.find(item => item.value === spType);
+    if (defaultType) {
+      setSelectedType(defaultType);
+    }
+  }, [sp])
 
   // TODO: add zod validation
   const submitHandler: SubmitEventHandler<HTMLFormElement> = (ev) => {
@@ -143,6 +148,8 @@ function NewTodoForm() {
           <InputLabel htmlFor="relatedHabits-field">
             Related habits
           </InputLabel>
+          {/* TODO: add safe browser area position */}
+          {/* TODO: fix offset logic */}
           <SelectBox
             multiSelect
             direction="y"

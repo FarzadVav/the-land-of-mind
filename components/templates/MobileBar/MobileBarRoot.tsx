@@ -10,7 +10,7 @@ function MobileBarRoot({ children }: PropsWithChildren) {
   const checkHref = useActiveHref();
 
   return (
-    <header className="wrapper sticky top-6 mt-6">
+    <header className="wrapper sticky z-40 top-6 mt-6">
       <div className="h-(--element-xl-size) bg-background/90 backdrop-blur-sm flex items-center rounded-full border-2 border-background-thin mb-6 relative">
         {checkHref("/land/profile") ? null : (
           <Link
