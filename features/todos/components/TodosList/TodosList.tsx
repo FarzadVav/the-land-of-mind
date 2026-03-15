@@ -20,7 +20,7 @@ type TodosListPropsT = ComponentProps<"div"> & {
 function TodosList({ className, todosListData, todoType, historyMode }: TodosListPropsT) {
   const sp = useSearchParams();
 
-  const spMode = sp.get("mode");
+  const spType = sp.get("type");
 
   return (
     <div className={cn(
@@ -39,7 +39,7 @@ function TodosList({ className, todosListData, todoType, historyMode }: TodosLis
             historyMode ? null : (
               <>
                 <Link
-                  href={`/land/todos/history?mode=${spMode}`}
+                  href={`/land/todos/history?type=${spType}`}
                   className="btn btn-soft element-rounded-full mx-auto mt-6"
                 >
                   <span>{getTodoType(todoType)} Todos History</span>

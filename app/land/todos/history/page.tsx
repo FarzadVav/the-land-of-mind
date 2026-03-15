@@ -1,11 +1,7 @@
-import { Suspense } from "react";
-
 import MobileBar from "@/components/templates/MobileBar/MobileBar";
 import TodosTabs from "@/features/todos/components/TodosTabs/TodosTabs";
 
-function LandTodosPage() {
-  const isAdvancedTodosMode = true;
-
+function LandTodosHistoryPage() {
   return (
     <>
       <MobileBar>
@@ -16,13 +12,9 @@ function LandTodosPage() {
         <MobileBar.Link />
       </MobileBar>
 
-      {isAdvancedTodosMode ? (
-        <Suspense>
-          <TodosTabs historyMode />
-        </Suspense>
-      ) : null}
+      <TodosTabs historyMode />
     </>
   )
 }
 
-export default LandTodosPage;
+export default LandTodosHistoryPage;

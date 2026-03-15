@@ -2,6 +2,12 @@ import { HabitT } from "../habits/types";
 
 export type TodoTypeT = "daily" | "weekly" | "monthly" | "annual" | "future";
 
+export type TodoSubTaskT = {
+  id: number;
+  title: string;
+  isDone: boolean;
+}
+
 export type TodoT = {
   id: number;
   title: string;
@@ -17,8 +23,4 @@ export type TodoT = {
   relatedHabits: HabitT[] | null;
 }
 
-export type TodoSubTaskT = {
-  id: number;
-  title: string;
-  isDone: boolean;
-}
+export type TodosByTypeT = Record<TodoTypeT, TodoT[]>;

@@ -1,5 +1,5 @@
-import { TODOS } from "../../mockData";
 import { getCurrentWeek } from "@/lib/date";
+import { TODOS_BY_TYPE } from "../../mockData";
 import TodosList from "../TodosList/TodosList";
 
 type TodosTabsWeeklyPropsT = {
@@ -13,7 +13,7 @@ function TodosTabsWeekly({ historyMode }: TodosTabsWeeklyPropsT) {
         {getCurrentWeek()}
       </p>
 
-      <TodosList historyMode={historyMode} todoType="weekly" todosListData={TODOS.data} />
+      <TodosList historyMode={historyMode} todoType="weekly" todosListData={TODOS_BY_TYPE.data.weekly} />
     </>
   )
 }

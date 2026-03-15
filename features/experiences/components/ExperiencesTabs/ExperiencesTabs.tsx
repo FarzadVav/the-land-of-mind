@@ -15,7 +15,7 @@ function ExperiencesTabs() {
 
   return (
     // TODO: add preventHistoryMode to PaginationWithSearchParams
-    <PaginationWithSearchParams className="wrapper" pages={PAGES} pageKey="mode">
+    <PaginationWithSearchParams className="wrapper" pages={PAGES} pageKey="category">
       <div className="flex items-center gap-3 overflow-x-auto pb-3">
         <div className="join join-border">
           <PaginationWithSearchParams.Counts

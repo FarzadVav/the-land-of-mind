@@ -1,6 +1,6 @@
-import { TODOS } from "../../mockData";
 import { getCurrentYear } from "@/lib/date";
 import TodosList from "../TodosList/TodosList";
+import { TODOS, TODOS_BY_TYPE } from "../../mockData";
 
 type TodosTabsAnnualPropsT = {
   historyMode?: boolean;
@@ -13,7 +13,7 @@ function TodosTabsAnnual({ historyMode }: TodosTabsAnnualPropsT) {
         {getCurrentYear()}
       </p>
 
-      <TodosList historyMode={historyMode} todoType="annual" todosListData={TODOS.data} />
+      <TodosList historyMode={historyMode} todoType="annual" todosListData={TODOS_BY_TYPE.data.annual} />
     </>
   )
 }

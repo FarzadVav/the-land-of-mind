@@ -38,7 +38,7 @@ function TodosTabs({ historyMode }: TodosTabsPropsT) {
 
   return (
     // TODO: add preventHistoryMode to PaginationWithSearchParams
-    <PaginationWithSearchParams className="wrapper" pages={PAGES} pageKey="mode">
+    <PaginationWithSearchParams className="wrapper" pages={PAGES} pageKey="type">
       <div className="flex items-center join join-border overflow-x-auto pb-3">
         <PaginationWithSearchParams.Counts
           enableNextClick

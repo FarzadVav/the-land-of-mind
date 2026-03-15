@@ -1,5 +1,5 @@
-import { TODOS } from "../../mockData";
 import TodosList from "../TodosList/TodosList";
+import { TODOS_BY_TYPE } from "../../mockData";
 
 type TodosTabsFuturePropsT = {
   historyMode?: boolean;
@@ -8,7 +8,7 @@ type TodosTabsFuturePropsT = {
 function TodosTabsFuture({ historyMode }: TodosTabsFuturePropsT) {
   return (
     <>
-      <TodosList historyMode={historyMode} todoType="future" todosListData={TODOS.data} />
+      <TodosList historyMode={historyMode} todoType="future" todosListData={TODOS_BY_TYPE.data.future} />
     </>
   )
 }
