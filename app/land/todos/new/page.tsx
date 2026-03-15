@@ -1,3 +1,5 @@
+import { Suspense } from "react";
+
 import MobileBar from "@/components/templates/MobileBar/MobileBar";
 import NewAndEditTodoForm from "@/features/todos/components/NewAndEditTodoForm/NewAndEditTodoForm";
 
@@ -12,7 +14,9 @@ function LandNewTodoPage() {
         <MobileBar.Link />
       </MobileBar>
 
-      <NewAndEditTodoForm />
+      <Suspense>
+        <NewAndEditTodoForm />
+      </Suspense>
     </>
   )
 }

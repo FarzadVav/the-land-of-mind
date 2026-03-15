@@ -1,3 +1,5 @@
+import { Suspense } from "react";
+
 import MobileBar from "@/components/templates/MobileBar/MobileBar";
 import ExperiencesTabs from "@/features/experiences/components/ExperiencesTabs/ExperiencesTabs";
 
@@ -10,7 +12,9 @@ function LandExperiencesPage() {
         </MobileBar.Title>
       </MobileBar>
 
-      <ExperiencesTabs />
+      <Suspense>
+        <ExperiencesTabs />
+      </Suspense>
     </>
   )
 }

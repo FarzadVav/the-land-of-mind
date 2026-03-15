@@ -1,3 +1,5 @@
+import { Suspense } from "react";
+
 import MobileBar from "@/components/templates/MobileBar/MobileBar";
 import NewAndEditExperienceForm from "@/features/experiences/components/NewAndEditExperienceForm/NewAndEditExperienceForm";
 
@@ -12,7 +14,9 @@ function LandNewExperiencePage() {
         <MobileBar.Link />
       </MobileBar>
 
-      <NewAndEditExperienceForm />
+      <Suspense>
+        <NewAndEditExperienceForm />
+      </Suspense>
     </>
   )
 }

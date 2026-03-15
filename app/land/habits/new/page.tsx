@@ -1,3 +1,5 @@
+import { Suspense } from "react";
+
 import MobileBar from "@/components/templates/MobileBar/MobileBar";
 import NewAndEditHabitForm from "@/features/habits/components/NewAndEditHabitForm/NewAndEditHabitForm";
 
@@ -12,7 +14,9 @@ function LandNewHabitPage() {
         <MobileBar.Link />
       </MobileBar>
 
-      <NewAndEditHabitForm />
+      <Suspense>
+        <NewAndEditHabitForm />
+      </Suspense>
     </>
   )
 }

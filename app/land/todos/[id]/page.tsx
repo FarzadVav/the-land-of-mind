@@ -1,3 +1,5 @@
+import { Suspense } from "react";
+
 import { NextPagePropsT } from "@/types/app.types";
 import MobileBar from "@/components/templates/MobileBar/MobileBar";
 import NewAndEditTodoForm from "@/features/todos/components/NewAndEditTodoForm/NewAndEditTodoForm";
@@ -17,7 +19,9 @@ async function LandEditTodoPage({ params }: NextPagePropsT) {
         <MobileBar.Link />
       </MobileBar>
 
-      <NewAndEditTodoForm todoId={todoId} isEditMode />
+      <Suspense>
+        <NewAndEditTodoForm todoId={todoId} isEditMode />
+      </Suspense>
     </>
   )
 }
