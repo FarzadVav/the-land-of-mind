@@ -5,6 +5,7 @@ import { SelectBox, SelectBoxOptionT } from "@kadoui/react";
 import { SubmitEventHandler, useEffect, useState } from "react";
 import { PlusIcon, ChevronDownIcon, EditIcon, SearchIcon } from "lucide-react";
 
+import { TODOS } from "../../mockData";
 import { TODO_TYPES } from "../../constants";
 import { ConstantT } from "@/types/app.types";
 import { HABITS } from "@/features/habits/mockData";
@@ -25,10 +26,25 @@ function NewAndEditTodoForm({ todoId, isEditMode }: NewAndEditTodoFormPropsT) {
 
   const sp = useSearchParams();
 
+  const defaultTodo = TODOS.data.find(item => item.id === todoId);
+
   const [selectedType, setSelectedType] =
     useState<SelectBoxOptionT | null>(null);
   const [selectedHabits, setSelectedHabits] =
     useState<SelectBoxOptionT[]>([]);
+
+  useEffect(() => {
+    if (defaultTodo) {
+      setSelectedType(
+        TODO_TYPES.find(item => item.value === defaultTodo.type) || null
+      );
+      if (defaultTodo.relatedHabits?.length) {
+        setSelectedHabits(
+          defaultTodo.relatedHabits.map(item => ({ name: item.title, value: item.id.toString() }))
+        );
+      }
+    }
+  }, []);
 
   useEffect(() => {
     const spType = sp.get("type");
@@ -71,6 +87,7 @@ function NewAndEditTodoForm({ todoId, isEditMode }: NewAndEditTodoFormPropsT) {
           name="title"
           className="input-field"
           placeholder="Something to do..."
+          defaultValue={defaultTodo?.title}
         />
       </label>
 
@@ -83,6 +100,7 @@ function NewAndEditTodoForm({ todoId, isEditMode }: NewAndEditTodoFormPropsT) {
           name="description"
           className="input-field"
           placeholder="Explain your todo..."
+          defaultValue={defaultTodo?.description || undefined}
         />
       </label>
 
@@ -124,6 +142,7 @@ function NewAndEditTodoForm({ todoId, isEditMode }: NewAndEditTodoFormPropsT) {
               id="deadlineDate"
               name="deadlineDate"
               className="input-field"
+              defaultValue={defaultTodo?.deadline}
             />
           </label>
           {/* TODO: add a TimePicker */}
@@ -134,6 +153,7 @@ function NewAndEditTodoForm({ todoId, isEditMode }: NewAndEditTodoFormPropsT) {
                 id="deadlineTime"
                 name="deadlineTime"
                 className="input-field"
+                defaultValue={defaultTodo?.deadline}
               />
             </label>
           ) : null}
@@ -149,6 +169,7 @@ function NewAndEditTodoForm({ todoId, isEditMode }: NewAndEditTodoFormPropsT) {
               name="subTasks"
               className="input-field"
               placeholder="Something to do..."
+              defaultValue={defaultTodo?.subTasks ? JSON.stringify(defaultTodo.subTasks) : undefined}
             />
           </label>
 

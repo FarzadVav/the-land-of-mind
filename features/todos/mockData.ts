@@ -1,4 +1,5 @@
 import { TodoT } from "./types";
+import { HABITS } from "../habits/mockData";
 import { ApiResponseT } from "@/types/app.types";
 
 export const TODOS: ApiResponseT<TodoT[]> = {
@@ -17,6 +18,10 @@ export const TODOS: ApiResponseT<TodoT[]> = {
         { id: 1, title: "Signin to a gym", isDone: true },
         { id: 2, title: "Buy creatin powder", isDone: true },
         { id: 3, title: "Find a gym bro", isDone: false },
+      ],
+      relatedHabits: [
+        HABITS.data[0],
+        HABITS.data[1]
       ]
     },
     {
@@ -29,7 +34,10 @@ export const TODOS: ApiResponseT<TodoT[]> = {
       updatedAt: new Date().toLocaleString(),
       description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae accusamus consequuntur possimus placeat repudiandae illo reprehenderit aperiam tempora neque voluptates, dolorum quos porro",
       type: "daily", // Should be dynamic
-      subTasks: null
+      subTasks: null,
+      relatedHabits: [
+        HABITS.data[1]
+      ]
     },
     {
       id: 3,
@@ -41,7 +49,11 @@ export const TODOS: ApiResponseT<TodoT[]> = {
       updatedAt: new Date().toLocaleString(),
       description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae accusamus consequuntur possimus placeat repudiandae illo reprehenderit aperiam tempora neque voluptates, dolorum quos porro",
       type: "daily", // Should be dynamic
-      subTasks: null
+      subTasks: null,
+      relatedHabits: [
+        HABITS.data[0],
+        HABITS.data[2]
+      ]
     },
     {
       id: 4,
@@ -53,7 +65,11 @@ export const TODOS: ApiResponseT<TodoT[]> = {
       updatedAt: new Date().toLocaleString(),
       description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae accusamus consequuntur possimus placeat repudiandae illo reprehenderit aperiam tempora neque voluptates, dolorum quos porro",
       type: "daily", // Should be dynamic
-      subTasks: null
+      subTasks: null,
+      relatedHabits: [
+        HABITS.data[1],
+        HABITS.data[2]
+      ]
     },
     {
       id: 5,
@@ -65,7 +81,10 @@ export const TODOS: ApiResponseT<TodoT[]> = {
       updatedAt: new Date().toLocaleString(),
       description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae accusamus consequuntur possimus placeat repudiandae illo reprehenderit aperiam tempora neque voluptates, dolorum quos porro",
       type: "daily", // Should be dynamic
-      subTasks: null
+      subTasks: null,
+      relatedHabits: [
+        HABITS.data[2]
+      ]
     },
     {
       id: 6,
@@ -77,7 +96,12 @@ export const TODOS: ApiResponseT<TodoT[]> = {
       updatedAt: new Date().toLocaleString(),
       description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae accusamus consequuntur possimus placeat repudiandae illo reprehenderit aperiam tempora neque voluptates, dolorum quos porro",
       type: "daily", // Should be dynamic
-      subTasks: null
+      subTasks: null,
+      relatedHabits: [
+        HABITS.data[0],
+        HABITS.data[1],
+        HABITS.data[2],
+      ]
     },
   ],
   errors: null

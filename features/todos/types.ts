@@ -1,3 +1,5 @@
+import { HabitT } from "../habits/types";
+
 export type TodoTypeT = "daily" | "weekly" | "monthly" | "annual" | "future";
 
 export type TodoT = {
@@ -12,6 +14,7 @@ export type TodoT = {
 
   type: TodoTypeT;
   subTasks: TodoSubTaskT[] | null;
+  relatedHabits: HabitT[] | null;
 }
 
 export type TodoSubTaskT = {

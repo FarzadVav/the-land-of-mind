@@ -1,11 +1,12 @@
 "use client";
 
-import { SubmitEventHandler, useState } from "react";
+import { SubmitEventHandler, useEffect, useState } from "react";
 import { SelectBox, SelectBoxOptionT } from "@kadoui/react";
 import { PlusIcon, ChevronDownIcon, EditIcon } from "lucide-react";
 
 import { HABIT_INGAGES } from "../../constants";
 import InputLabel from "@/components/ui/InputLabel/InputLabel";
+import { HABITS } from "../../mockData";
 
 type NewAndEditHabitFormPropsT = {
   habitId?: number;
@@ -15,8 +16,16 @@ type NewAndEditHabitFormPropsT = {
 function NewAndEditHabitForm({ habitId, isEditMode }: NewAndEditHabitFormPropsT) {
   console.log(habitId);
 
+  const defaultHabit = HABITS.data.find(item => item.id === habitId);
+
   const [selectedIngage, setSelectedIngage] =
     useState<SelectBoxOptionT | null>(null);
+
+  useEffect(() => {
+    if (defaultHabit) {
+      setSelectedIngage(HABIT_INGAGES.find(item => item.value === defaultHabit.ingage) || null);
+    }
+  }, []);
 
   // TODO: add zod validation
   const submitHandler: SubmitEventHandler<HTMLFormElement> = (ev) => {
@@ -44,8 +53,9 @@ function NewAndEditHabitForm({ habitId, isEditMode }: NewAndEditHabitFormPropsT)
           id="title"
           type="text"
           name="title"
-          className="input-field"
           placeholder="Habit..."
+          className="input-field"
+          defaultValue={defaultHabit?.title}
         />
       </label>
 
@@ -58,6 +68,7 @@ function NewAndEditHabitForm({ habitId, isEditMode }: NewAndEditHabitFormPropsT)
           name="description"
           className="input-field"
           placeholder="Explain your habit..."
+          defaultValue={defaultHabit?.description || undefined}
         />
       </label>
 

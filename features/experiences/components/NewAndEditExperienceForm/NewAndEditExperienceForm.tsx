@@ -1,14 +1,14 @@
 "use client";
 
+import Link from "next/link";
 import { useSearchParams } from "next/navigation";
-import { SubmitEventHandler, useEffect, useState } from "react";
 import { SelectBox, SelectBoxOptionT } from "@kadoui/react";
+import { SubmitEventHandler, useEffect, useState } from "react";
 import { PlusIcon, ChevronDownIcon, EditIcon, SearchIcon } from "lucide-react";
 
 import { ConstantT } from "@/types/app.types";
-import { EXPERIENCE_CATEGORIES } from "../../mockData";
 import InputLabel from "@/components/ui/InputLabel/InputLabel";
-import Link from "next/link";
+import { EXPERIENCE_CATEGORIES, EXPERIENCES } from "../../mockData";
 
 type NewAndEditExperienceFormPropsT = {
   isEditMode?: boolean;
@@ -20,13 +20,24 @@ function NewAndEditExperienceForm({ experienceId, isEditMode }: NewAndEditExperi
 
   const sp = useSearchParams();
 
+  const defaultExperience = EXPERIENCES.data.find(item => item.id === experienceId);
+
   const categoriesConstant: ConstantT<string>[] = EXPERIENCE_CATEGORIES.data.map(item => ({
     name: item.title,
     value: item.id.toString()
-  }))
+  }));
 
   const [selectedCategory, setSelectedCategory] =
     useState<SelectBoxOptionT | null>(null);
+
+  useEffect(() => {
+    if (defaultExperience) {
+      setSelectedCategory({
+        name: defaultExperience.category.title,
+        value: defaultExperience.category.id.toString()
+      });
+    }
+  }, []);
 
   useEffect(() => {
     const categoryId = sp.get("category");
@@ -47,11 +58,11 @@ function NewAndEditExperienceForm({ experienceId, isEditMode }: NewAndEditExperi
 
     const fd = new FormData(ev.target);
 
-    selectedCategory && fd.append("ingege", selectedCategory.value);
+    selectedCategory && fd.append("category", selectedCategory.value);
 
     console.log("title --->", fd.get("title"));
     console.log("description --->", fd.get("description"));
-    console.log("ingege --->", fd.get("ingege"));
+    console.log("category --->", fd.get("category"));
   }
 
   return (
@@ -69,6 +80,7 @@ function NewAndEditExperienceForm({ experienceId, isEditMode }: NewAndEditExperi
           name="title"
           className="input-field"
           placeholder="Experience..."
+          defaultValue={defaultExperience?.title}
         />
       </label>
 
@@ -81,6 +93,7 @@ function NewAndEditExperienceForm({ experienceId, isEditMode }: NewAndEditExperi
           name="description"
           className="input-field"
           placeholder="Explain your experience..."
+          defaultValue={defaultExperience?.description || undefined}
         />
       </label>
 
