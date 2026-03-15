@@ -45,7 +45,7 @@ function NewAndEditHabitForm({ habitId, isEditMode }: NewAndEditHabitFormPropsT)
           type="text"
           name="title"
           className="input-field"
-          placeholder="Something to do..."
+          placeholder="Habit..."
         />
       </label>
 
@@ -57,7 +57,7 @@ function NewAndEditHabitForm({ habitId, isEditMode }: NewAndEditHabitFormPropsT)
           id="description"
           name="description"
           className="input-field"
-          placeholder="Explain your todo..."
+          placeholder="Explain your habit..."
         />
       </label>
 
@@ -77,7 +77,7 @@ function NewAndEditHabitForm({ habitId, isEditMode }: NewAndEditHabitFormPropsT)
             id="ingage-field"
             name="ingage-field"
             className="input-field"
-            placeholder="Select a type..."
+            placeholder="Select a ingage..."
           />
           <SelectBox.List className="select-box-list offset bg-background-thin">
             <SelectBox.Options

@@ -5,34 +5,39 @@ import { ComponentProps } from "react";
 import { PlusIcon } from "lucide-react";
 import { cn } from "@kadoui/react/utils";
 
-import { EXPERIENCES } from "../../mockData";
 import ExperienceCard from "../ExperienceCard/ExperienceCard";
+import { ExperienceCategoryT, ExperienceT } from "../../types";
 import EmptyExperienceCard from "../EmptyExperienceCard/EmptyExperienceCard";
 
-function ExperiencesList({ className }: ComponentProps<"div">) {
+type ExperiencesListPropsT = ComponentProps<"div"> & {
+  experiencesData: ExperienceT[];
+  experienceCategory: ExperienceCategoryT;
+}
+
+function ExperiencesList({ className, experienceCategory, experiencesData }: ExperiencesListPropsT) {
   return (
     <div className={cn(
-      "wrapper space-y-3",
+      "space-y-3",
       className
     )}>
-      {EXPERIENCES.data.length ? (
+      {experiencesData.length ? (
         <>
           {
-            EXPERIENCES.data.map(item => (
+            experiencesData.map(item => (
               <ExperienceCard key={item.id} experienceData={item} />
             ))
           }
 
           <Link
-            href="/land/experiences/new"
+            href={`/land/experiences/new?category=${experienceCategory.id}`}
             className="btn btn-soft element-rounded-full palette-primary mx-auto mt-3"
           >
-            <span>New Experience</span>
+            <span>New {experienceCategory.title} Experience</span>
             <PlusIcon className="element-icon-size" />
           </Link>
         </>
       ) : (
-        <EmptyExperienceCard />
+        <EmptyExperienceCard experienceCategory={experienceCategory} />
       )}
     </div>
   )

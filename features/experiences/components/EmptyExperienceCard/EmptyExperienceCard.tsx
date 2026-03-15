@@ -3,14 +3,20 @@ import { ComponentProps } from "react";
 import { PlusIcon } from "lucide-react";
 import { cn } from "@kadoui/react/utils";
 
-function EmptyExperienceCard({ className }: ComponentProps<"div">) {
+import { ExperienceCategoryT } from "../../types";
+
+type EmptyExperienceCardPropsT = ComponentProps<"div"> & {
+  experienceCategory: ExperienceCategoryT;
+}
+
+function EmptyExperienceCard({ experienceCategory, className }: EmptyExperienceCardPropsT) {
   return (
     <div className={cn(
       "card card-y border-2 border-dashed border-background-thin",
       className
     )}>
       <h6 className="title text-center">
-        Experiences Is Empty
+        {experienceCategory.title} Experiences Is Empty
       </h6>
       <Link
         href="/land/experiences/new"

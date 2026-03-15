@@ -11,7 +11,7 @@ async function LandEditExperiencePage({ params }: NextPagePropsT) {
     <>
       <MobileBar>
         <MobileBar.Title>
-          Edit Habit
+          Edit Experience
         </MobileBar.Title>
 
         <MobileBar.Link />

@@ -1,20 +1,24 @@
 "use client";
 
-import { SubmitEventHandler, useState } from "react";
+import { useSearchParams } from "next/navigation";
+import { SubmitEventHandler, useEffect, useState } from "react";
 import { SelectBox, SelectBoxOptionT } from "@kadoui/react";
 import { PlusIcon, ChevronDownIcon, EditIcon, SearchIcon } from "lucide-react";
 
-import InputLabel from "@/components/ui/InputLabel/InputLabel";
 import { ConstantT } from "@/types/app.types";
 import { EXPERIENCE_CATEGORIES } from "../../mockData";
+import InputLabel from "@/components/ui/InputLabel/InputLabel";
+import Link from "next/link";
 
 type NewAndEditExperienceFormPropsT = {
-  experienceId?: number;
   isEditMode?: boolean;
+  experienceId?: number;
 }
 
 function NewAndEditExperienceForm({ experienceId, isEditMode }: NewAndEditExperienceFormPropsT) {
   console.log(experienceId);
+
+  const sp = useSearchParams();
 
   const categoriesConstant: ConstantT<string>[] = EXPERIENCE_CATEGORIES.data.map(item => ({
     name: item.title,
@@ -23,6 +27,19 @@ function NewAndEditExperienceForm({ experienceId, isEditMode }: NewAndEditExperi
 
   const [selectedCategory, setSelectedCategory] =
     useState<SelectBoxOptionT | null>(null);
+
+  useEffect(() => {
+    const categoryId = sp.get("category");
+    if (categoryId) {
+      const defaultCategory = EXPERIENCE_CATEGORIES.data.find(item => item.id === +categoryId);
+      if (defaultCategory) {
+        setSelectedCategory({
+          name: defaultCategory.title,
+          value: defaultCategory.id.toString()
+        });
+      }
+    }
+  }, [sp]);
 
   // TODO: add zod validation
   const submitHandler: SubmitEventHandler<HTMLFormElement> = (ev) => {
@@ -51,7 +68,7 @@ function NewAndEditExperienceForm({ experienceId, isEditMode }: NewAndEditExperi
           type="text"
           name="title"
           className="input-field"
-          placeholder="Something to do..."
+          placeholder="Experience..."
         />
       </label>
 
@@ -63,7 +80,7 @@ function NewAndEditExperienceForm({ experienceId, isEditMode }: NewAndEditExperi
           id="description"
           name="description"
           className="input-field"
-          placeholder="Explain your todo..."
+          placeholder="Explain your experience..."
         />
       </label>
 
@@ -93,6 +110,15 @@ function NewAndEditExperienceForm({ experienceId, isEditMode }: NewAndEditExperi
             <SelectBox.Options
               className="select-box-option data-[state=false]:element-rounded-full data-[state=false]:btn-soft data-[state=true]:btn-fill"
             />
+
+            <p className="mt-3 font-bold">You need another category?</p>
+            <Link
+              href={"/land/experiences/categories"}
+              className="btn btn-soft element-rounded-full element-w-full palette-primary"
+            >
+              <span>Edit Categories</span>
+              <EditIcon className="element-icon-size" />
+            </Link>
           </SelectBox.List>
         </SelectBox.Input>
       </SelectBox>

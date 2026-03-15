@@ -12,3 +12,8 @@ export type ExperienceT = {
 
   category: ExperienceCategoryT;
 }
+
+export type ExperienceByCategoryT = {
+  category: ExperienceCategoryT;
+  experiences: ExperienceT[];
+}

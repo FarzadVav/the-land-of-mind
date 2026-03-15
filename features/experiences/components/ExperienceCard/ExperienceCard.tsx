@@ -23,7 +23,7 @@ function ExperienceCard({ experienceData, className }: ExperienceCardPropsT) {
         {experienceData.title}
       </p>
       <Sheet>
-        <Sheet.Toggle className="btn btn-ghost element-square-size element-rounded-full shrink-0">
+        <Sheet.Toggle   >
           <MoreVerticalIcon className="element-icon-size" />
         </Sheet.Toggle>
 

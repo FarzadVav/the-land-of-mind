@@ -42,7 +42,7 @@ function TodosTabs({ historyMode }: TodosTabsPropsT) {
       <div className="flex items-center join join-border overflow-x-auto pb-3">
         <PaginationWithSearchParams.Counts
           enableNextClick
-          className="btn w-1/3 data-[state=true]:btn-fill data-[state=false]:btn-soft element-rounded-full"
+          className="btn data-[state=true]:btn-fill data-[state=false]:btn-soft element-rounded-full flex-1 min-w-max"
         >
           {
             (count) => (
