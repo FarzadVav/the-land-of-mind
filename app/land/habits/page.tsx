@@ -15,4 +15,4 @@ function LandHabitsPage() {
   )
 }
 
-export default LandHabitsPage
+export default LandHabitsPage;

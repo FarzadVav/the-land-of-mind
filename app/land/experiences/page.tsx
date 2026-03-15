@@ -1,4 +1,5 @@
 import MobileBar from "@/components/templates/MobileBar/MobileBar";
+import ExperiencesList from "@/features/experiences/components/ExperiencesList/ExperiencesList";
 
 function LandExperiencesPage() {
   return (
@@ -9,9 +10,7 @@ function LandExperiencesPage() {
         </MobileBar.Title>
       </MobileBar>
 
-      <div className="wrapper">
-        Page
-      </div>
+      <ExperiencesList />
     </>
   )
 }
