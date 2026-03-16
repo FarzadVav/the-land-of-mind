@@ -1,3 +1,6 @@
+import { Suspense } from "react";
+
+import BoxTabs from "@/features/box/components/BoxTabs/BoxTabs";
 import MobileBar from "@/components/templates/MobileBar/MobileBar";
 
 function LandBoxPage() {
@@ -5,13 +8,13 @@ function LandBoxPage() {
     <>
       <MobileBar>
         <MobileBar.Title>
-          Box
+          Todos
         </MobileBar.Title>
       </MobileBar>
 
-      <div className="wrapper">
-        Page
-      </div>
+      <Suspense>
+        <BoxTabs />
+      </Suspense>
     </>
   )
 }

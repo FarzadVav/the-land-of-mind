@@ -1,11 +1,11 @@
 "use client";
 
+import Link from "next/link";
 import { EditIcon } from "lucide-react";
 import { PaginationWithSearchParams } from "@kadoui/react";
 
 import { EXPERIENCES_BY_CATEGORY } from "../../mockData";
 import ExperiencesList from "../ExperiencesList/ExperiencesList";
-import Link from "next/link";
 
 function ExperiencesTabs() {
   const PAGES = EXPERIENCES_BY_CATEGORY.data.map(item => ({

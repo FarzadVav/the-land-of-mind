@@ -59,4 +59,4 @@ function TodosTabs({ historyMode }: TodosTabsPropsT) {
   )
 }
 
-export default TodosTabs
+export default TodosTabs;
