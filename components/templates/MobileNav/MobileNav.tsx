@@ -5,12 +5,13 @@ import { BoxIcon, CheckSquareIcon, ListIcon, NotebookPenIcon } from "lucide-reac
 
 import useActiveHref from "@/hooks/useActiveHref/useActiveHref";
 import FloatingAIButton from "../FloatingAIButton/FloatingAIButton";
+import RotueProtector from "@/components/modules/RotueProtector/RotueProtector";
 
 function MobileNav() {
   const checkHref = useActiveHref();
 
   return (
-    <>
+    <RotueProtector routes={["/land/box"]}>
       <div className="mt-42" />
 
       <nav className="h-20 border-t-2 border-background-thin flex items-center justify-center z-40 fixed bottom-0 left-0 right-0 bg-background/90 backdrop-blur-sm">
@@ -47,9 +48,9 @@ function MobileNav() {
           <span className="sub-text">Box</span>
         </Link>
 
-        <FloatingAIButton className="right-6 bottom-full -translate-y-6" />
+        <FloatingAIButton />
       </nav>
-    </>
+    </RotueProtector>
   )
 }
 

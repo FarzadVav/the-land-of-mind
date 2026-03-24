@@ -1,30 +1,22 @@
 "use client";
 
-import { ComponentProps } from "react";
-import { cn } from "@kadoui/react/utils";
-
 import BoxMessageCard from "../BoxMessageCard/BoxMessageCard";
 import { AllCombinedMessageTypeT, MessageT } from "../../types";
 import BoxEmptyMessagesCard from "../BoxEmptyMessagesCard/BoxEmptyMessagesCard";
 
-type BoxMessagesPropsT = ComponentProps<"div"> & {
+type BoxMessagesPropsT = {
   messagesData: MessageT[];
   messageType: AllCombinedMessageTypeT;
 }
 
-function BoxMessages({ className, messagesData, messageType }: BoxMessagesPropsT) {
+function BoxMessages({ messagesData, messageType }: BoxMessagesPropsT) {
   return (
-    <div className={cn(
-      "space-y-3",
-      className
-    )}>
-      {messagesData.length ?
-        messagesData.map(item => (
-          <BoxMessageCard key={item.id} messageData={item} />
-        )) : (
-          <BoxEmptyMessagesCard messageType={messageType} />
-        )}
-    </div>
+    messagesData.length ?
+      messagesData.map(item => (
+        <BoxMessageCard className="not-first:mt-3" key={item.id} messageData={item} />
+      )) : (
+        <BoxEmptyMessagesCard messageType={messageType} />
+      )
   )
 }
 

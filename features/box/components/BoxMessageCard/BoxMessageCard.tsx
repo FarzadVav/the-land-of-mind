@@ -5,7 +5,6 @@ import Image from "next/image";
 import { Modal } from "@kadoui/react";
 import { ComponentProps } from "react";
 import { cn } from "@kadoui/react/utils";
-import { useRouter } from "next/navigation";
 import { DownloadIcon, MoreVerticalIcon, ReplyIcon } from "lucide-react";
 
 import { MessageT } from "../../types";
@@ -16,8 +15,6 @@ type BoxMessageCardPropsT = ComponentProps<"div"> & {
 }
 
 function BoxMessageCard({ messageData, className }: BoxMessageCardPropsT) {
-  const router = useRouter();
-
   return (
     <div
       id={messageData.id.toString()}
@@ -30,7 +27,7 @@ function BoxMessageCard({ messageData, className }: BoxMessageCardPropsT) {
         <div
           className="border-l-2 border-foreground bg-foreground/10 p-3 rounded-e-xl sub-text cursor-pointer hover:bg-foreground/12 transition-colors"
           onClick={() => {
-            router.replace(`#${messageData.replyTo?.id}`);
+            // Add containerRef to a context and scroll the container to the correct position
           }}
         >
           <ReplyIcon className="element-icon-size -scale-x-100 inline" />

@@ -8,8 +8,10 @@ function LandBoxPage() {
     <>
       <MobileBar>
         <MobileBar.Title>
-          Todos
+          Box
         </MobileBar.Title>
+
+        <MobileBar.Link />
       </MobileBar>
 
       <Suspense>
