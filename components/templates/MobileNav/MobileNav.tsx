@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { BoxIcon, CheckSquareIcon, ListIcon, NotebookPenIcon } from "lucide-react";
+import { CheckSquareIcon, ListIcon, NotebookPenIcon } from "lucide-react";
 
 import useActiveHref from "@/hooks/useActiveHref/useActiveHref";
 import FloatingAIButton from "../FloatingAIButton/FloatingAIButton";
@@ -39,14 +39,15 @@ function MobileNav() {
           <NotebookPenIcon className="element-icon-size" />
           <span className="sub-text">Experiences</span>
         </Link>
-        <Link
+        {/* NOTE: for future */}
+        {/* <Link
           href={"/land/box"}
           className={`h-full w-1/3 flex items-center justify-center flex-col gap-1.5 transition-colors
           ${checkHref("/land/box") ? "active:text-foreground-thin" : "text-foreground-thin active:text-foreground"}`}
         >
           <BoxIcon className="element-icon-size" />
           <span className="sub-text">Box</span>
-        </Link>
+        </Link> */}
 
         <FloatingAIButton />
       </nav>
