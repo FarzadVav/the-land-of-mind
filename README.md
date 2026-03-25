@@ -11,6 +11,9 @@
     - Add/Edit (Title, Description, Ingage (Time for doing per day/week/month))
   - Experiences (Categorise)
     - Add/Edit (Title, Description, Category)
-  - Box (Cloud storage, All, Text, Image, Video, Voice, Audio, File)
   - Profile (Analysis (Todos, Habits tracker, Experiences level), Theme, Logout)
-  - Floating AI button (Chat, Chats history)
+
+### For future:
+
+- Floating AI button (Chat, Chats history)
+- Box (Cloud storage, All, Text, Image, Video, Voice, Audio, File)

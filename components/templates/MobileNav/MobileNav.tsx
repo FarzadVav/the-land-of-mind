@@ -49,7 +49,8 @@ function MobileNav() {
           <span className="sub-text">Box</span>
         </Link> */}
 
-        <FloatingAIButton />
+        {/* NOTE: for future */}
+        {/* <FloatingAIButton /> */}
       </nav>
     </RotueProtector>
   )
