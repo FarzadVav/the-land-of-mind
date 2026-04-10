@@ -6,12 +6,12 @@ import { cn } from "@kadoui/react/utils";
 import { TodoTypeT } from "../../../lib/todos.types";
 import { getTodoType } from "../../../lib/todos.utils";
 
-type EmptyTodoCardPropsT = ComponentProps<"div"> & {
+type TodosEmptyCardPropsT = ComponentProps<"div"> & {
   todoType: TodoTypeT;
   historyMode?: boolean;
 }
 
-function EmptyTodoCard({ className, todoType, historyMode }: EmptyTodoCardPropsT) {
+function TodosEmptyCard({ className, todoType, historyMode }: TodosEmptyCardPropsT) {
   return (
     <div className={cn(
       "card card-y border-2 border-dashed border-background-thin",
@@ -33,4 +33,4 @@ function EmptyTodoCard({ className, todoType, historyMode }: EmptyTodoCardPropsT
   )
 }
 
-export default EmptyTodoCard
+export default TodosEmptyCard;

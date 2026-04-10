@@ -1,6 +1,6 @@
-import { getCurrentDay } from "@/lib/date";
-import { TODOS_BY_TYPE } from "../../../mockData";
 import TodosList from "../todosList/TodosList";
+import { getCurrentDay } from "@/features/general/lib/general.utils";
+import { TODOS_BY_TYPE } from "@/features/todos/lib/todos.constants";
 
 type TodosTabsDailyPropsT = {
   historyMode?: boolean;

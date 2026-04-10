@@ -1,6 +1,6 @@
-import { getCurrentMonth } from "@/lib/date";
 import TodosList from "../todosList/TodosList";
-import { TODOS_BY_TYPE } from "../../../mockData";
+import { TODOS_BY_TYPE } from "@/features/todos/lib/todos.constants";
+import { getCurrentMonth } from "@/features/general/lib/general.utils";
 
 type TodosTabsMonthlyPropsT = {
   historyMode?: boolean;

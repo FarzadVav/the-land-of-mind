@@ -1,6 +1,6 @@
-import { getCurrentWeek } from "@/lib/date";
-import { TODOS_BY_TYPE } from "../../../mockData";
 import TodosList from "../todosList/TodosList";
+import { TODOS_BY_TYPE } from "@/features/todos/lib/todos.constants";
+import { getCurrentWeek } from "@/features/general/lib/general.utils";
 
 type TodosTabsWeeklyPropsT = {
   historyMode?: boolean;

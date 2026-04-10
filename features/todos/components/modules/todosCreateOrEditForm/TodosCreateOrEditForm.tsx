@@ -5,23 +5,22 @@ import { SelectBox, SelectBoxOptionT } from "@kadoui/react";
 import { SubmitEventHandler, useEffect, useState } from "react";
 import { PlusIcon, ChevronDownIcon, EditIcon, SearchIcon } from "lucide-react";
 
-import { TODOS } from "../../../mockData";
-import { TODO_TYPES } from "../../../lib/todos.constants";
-import { ConstantT } from "@/types/app.types";
-import { HABITS } from "@/features/habits/mockData";
-import InputLabel from "@/components/ui/InputLabel/InputLabel";
+import { HABITS } from "@/features/habits/lib/habits.constants";
+import { TODO_TYPES, TODOS } from "../../../lib/todos.constants";
+import { ConstantT } from "@/features/general/lib/general.types";
+import InputLabel from "@/features/general/components/modules/inputLabel/InputLabel";
 
 const HABITS_CONSTANT: ConstantT<string>[] = HABITS.data.map(item => ({
   name: item.title,
   value: item.id.toString()
 }));
 
-type NewAndEditTodoFormPropsT = {
+type TodosCreateOrEditFormPropsT = {
   todoId?: number;
   isEditMode?: boolean;
 }
 
-function NewAndEditTodoForm({ todoId, isEditMode }: NewAndEditTodoFormPropsT) {
+function TodosCreateOrEditForm({ todoId, isEditMode }: TodosCreateOrEditFormPropsT) {
   console.log(todoId);
 
   const sp = useSearchParams();
@@ -218,4 +217,4 @@ function NewAndEditTodoForm({ todoId, isEditMode }: NewAndEditTodoFormPropsT) {
   )
 }
 
-export default NewAndEditTodoForm;
+export default TodosCreateOrEditForm;

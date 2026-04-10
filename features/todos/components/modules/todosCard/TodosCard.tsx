@@ -5,14 +5,14 @@ import { cn } from "@kadoui/react/utils";
 import { CheckIcon, EditIcon, MoreVerticalIcon, Trash2Icon } from "lucide-react";
 
 import { TodoT } from "../../../lib/todos.types";
-import { getDetailDate } from "@/lib/date";
+import { getDetailDate } from "@/features/general/lib/general.utils";
 
-type TodoCardPropsT = ComponentProps<"div"> & {
+type TodosCardPropsT = ComponentProps<"div"> & {
   todoData: TodoT;
   historyMode?: boolean;
 }
 
-function TodoCard({ todoData, historyMode, className }: TodoCardPropsT) {
+function TodoCards({ todoData, historyMode, className }: TodosCardPropsT) {
   return (
     <div
       className={cn(
@@ -139,4 +139,4 @@ function TodoCard({ todoData, historyMode, className }: TodoCardPropsT) {
   )
 }
 
-export default TodoCard;
+export default TodoCards;

@@ -1,6 +1,6 @@
-import { getCurrentYear } from "@/lib/date";
 import TodosList from "../todosList/TodosList";
-import { TODOS, TODOS_BY_TYPE } from "../../../mockData";
+import { getCurrentYear } from "@/features/general/lib/general.utils";
+import { TODOS_BY_TYPE } from "@/features/todos/lib/todos.constants";
 
 type TodosTabsAnnualPropsT = {
   historyMode?: boolean;
