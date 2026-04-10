@@ -2,7 +2,7 @@ import { Suspense } from "react";
 
 import { NextPagePropsT } from "@/types/app.types";
 import MobileBar from "@/components/templates/MobileBar/MobileBar";
-import NewAndEditHabitForm from "@/features/habits/components/NewAndEditHabitForm/NewAndEditHabitForm";
+import NewAndEditHabitForm from "@/features/habits/components/modules/newAndEditHabitForm/NewAndEditHabitForm";
 
 async function LandEditHabitPage({ params }: NextPagePropsT) {
   const p = await params;

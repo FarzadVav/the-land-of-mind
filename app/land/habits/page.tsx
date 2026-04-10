@@ -1,5 +1,5 @@
 import MobileBar from "@/components/templates/MobileBar/MobileBar";
-import HabitsList from "@/features/habits/components/HabitsList/HabitsList";
+import HabitsList from "@/features/habits/components/modules/habitsList/HabitsList";
 
 function LandHabitsPage() {
   return (

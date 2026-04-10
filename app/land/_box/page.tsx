@@ -1,6 +1,6 @@
 import { Suspense } from "react";
 
-import BoxTabs from "@/features/box/components/BoxTabs/BoxTabs";
+import BoxTabs from "@/features/box/components/modules/boxTabs/BoxTabs";
 import MobileBar from "@/components/templates/MobileBar/MobileBar";
 
 function LandBoxPage() {

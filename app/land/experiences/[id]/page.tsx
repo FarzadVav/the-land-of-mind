@@ -2,7 +2,7 @@ import { Suspense } from "react";
 
 import { NextPagePropsT } from "@/types/app.types";
 import MobileBar from "@/components/templates/MobileBar/MobileBar";
-import NewAndEditExperienceForm from "@/features/experiences/components/NewAndEditExperienceForm/NewAndEditExperienceForm";
+import NewAndEditExperienceForm from "@/features/experiences/components/modules/newAndEditExperienceForm/NewAndEditExperienceForm";
 
 async function LandEditExperiencePage({ params }: NextPagePropsT) {
   const p = await params;

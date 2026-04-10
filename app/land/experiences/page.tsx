@@ -1,7 +1,7 @@
 import { Suspense } from "react";
 
 import MobileBar from "@/components/templates/MobileBar/MobileBar";
-import ExperiencesTabs from "@/features/experiences/components/ExperiencesTabs/ExperiencesTabs";
+import ExperiencesTabs from "@/features/experiences/components/modules/experiencesTabs/ExperiencesTabs";
 
 function LandExperiencesPage() {
   return (

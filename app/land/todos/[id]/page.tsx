@@ -2,7 +2,7 @@ import { Suspense } from "react";
 
 import { NextPagePropsT } from "@/types/app.types";
 import MobileBar from "@/components/templates/MobileBar/MobileBar";
-import NewAndEditTodoForm from "@/features/todos/components/NewAndEditTodoForm/NewAndEditTodoForm";
+import NewAndEditTodoForm from "@/features/todos/components/modules/newAndEditTodoForm/NewAndEditTodoForm";
 
 async function LandEditTodoPage({ params }: NextPagePropsT) {
   const p = await params;

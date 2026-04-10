@@ -1,7 +1,7 @@
 import { Suspense } from "react";
 
 import MobileBar from "@/components/templates/MobileBar/MobileBar";
-import NewAndEditHabitForm from "@/features/habits/components/NewAndEditHabitForm/NewAndEditHabitForm";
+import NewAndEditHabitForm from "@/features/habits/components/modules/newAndEditHabitForm/NewAndEditHabitForm";
 
 function LandNewHabitPage() {
   return (

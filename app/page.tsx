@@ -1,5 +1,3 @@
-function LandingPage() {
-  return <div>LandingPage</div>;
-}
+import LandingPage from "@/features/general/components/templates/landingPage/LandingPage";
 
 export default LandingPage;
