@@ -2,7 +2,7 @@ import Link from "next/link";
 import { UserIcon } from "lucide-react";
 import { PropsWithChildren } from "react";
 
-import RotueProtector from "@/components/modules/RotueProtector/RotueProtector";
+import RotueProtector from "../../modules/rotueProtector/RotueProtector";
 
 function MobileBarRoot({ children }: PropsWithChildren) {
   return (

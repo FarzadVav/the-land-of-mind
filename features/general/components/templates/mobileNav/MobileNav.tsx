@@ -3,9 +3,8 @@
 import Link from "next/link";
 import { CheckSquareIcon, ListIcon, NotebookPenIcon } from "lucide-react";
 
-import useActiveHref from "@/hooks/useActiveHref/useActiveHref";
-import FloatingAIButton from "../floatingAIButton/FloatingAIButton";
-import RotueProtector from "@/components/modules/RotueProtector/RotueProtector";
+import RotueProtector from "../../modules/rotueProtector/RotueProtector";
+import useActiveHref from "@/features/general/hooks/useActiveHref/useActiveHref";
 
 function MobileNav() {
   const checkHref = useActiveHref();

@@ -1,4 +1,4 @@
-import { HabitT } from "../../habits/habits.types";
+import { HabitT } from "@/features/habits/lib/habits.types";
 
 export type TodoTypeT = "daily" | "weekly" | "monthly" | "annual" | "future";
 

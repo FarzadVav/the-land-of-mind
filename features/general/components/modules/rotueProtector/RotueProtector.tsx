@@ -2,7 +2,7 @@
 
 import { PropsWithChildren } from "react";
 
-import useActiveHref from "@/hooks/useActiveHref/useActiveHref";
+import useActiveHref from "@/features/general/hooks/useActiveHref/useActiveHref";
 
 type RotueProtectorPropsT = PropsWithChildren & {
   routes: string[];
