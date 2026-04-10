@@ -1,21 +1,3 @@
-import MobileBar from "@/components/templates/MobileBar/MobileBar";
+import UserProfilePage from "@/features/user/components/templates/userProfilePage/UserProfilePage";
 
-function LandProfilePage() {
-  return (
-    <>
-      <MobileBar>
-        <MobileBar.Title>
-          Profile
-        </MobileBar.Title>
-
-        <MobileBar.Link />
-      </MobileBar>
-
-      <div className="wrapper">
-        Page
-      </div>
-    </>
-  )
-}
-
-export default LandProfilePage;
+export default UserProfilePage;
