@@ -1,5 +1,5 @@
 import { HabitIngageT, HabitT } from "./habits.types";
-import { ApiResponseT, ConstantT } from "../../general/lib/general.types";
+import { ApiResponseT, ConstantT } from "@/features/general/lib/general.types";
 
 export const HABIT_INGAGES: ConstantT<HabitIngageT>[] = [
   { name: "Per Day", value: "day" },

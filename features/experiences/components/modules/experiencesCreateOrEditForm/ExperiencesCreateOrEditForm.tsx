@@ -10,12 +10,12 @@ import { ConstantT } from "@/features/general/lib/general.types";
 import InputLabel from "@/features/general/components/modules/inputLabel/InputLabel";
 import { EXPERIENCE_CATEGORIES, EXPERIENCES } from "../../../lib/experiences.constants";
 
-type NewAndEditExperienceFormPropsT = {
+type ExperiencesCreateOrEditFormPropsT = {
   isEditMode?: boolean;
   experienceId?: number;
 }
 
-function NewAndEditExperienceForm({ experienceId, isEditMode }: NewAndEditExperienceFormPropsT) {
+function ExperiencesCreateOrEditForm({ experienceId, isEditMode }: ExperiencesCreateOrEditFormPropsT) {
   console.log(experienceId);
 
   const sp = useSearchParams();
@@ -146,4 +146,4 @@ function NewAndEditExperienceForm({ experienceId, isEditMode }: NewAndEditExperi
   )
 }
 
-export default NewAndEditExperienceForm;
+export default ExperiencesCreateOrEditForm;

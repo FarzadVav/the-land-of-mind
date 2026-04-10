@@ -5,8 +5,8 @@ import { ComponentProps } from "react";
 import { PlusIcon } from "lucide-react";
 import { cn } from "@kadoui/react/utils";
 
-import ExperienceCard from "../experienceCard/ExperienceCard";
-import EmptyExperienceCard from "../emptyExperienceCard/EmptyExperienceCard";
+import ExperiencesCard from "../experiencesCard/ExperiencesCard";
+import ExperiencesEmptyCard from "../experiencesEmptyCard/ExperiencesEmptyCard";
 import { ExperienceCategoryT, ExperienceT } from "../../../lib/experiences.types";
 
 type ExperiencesListPropsT = ComponentProps<"div"> & {
@@ -24,7 +24,7 @@ function ExperiencesList({ className, experienceCategory, experiencesData }: Exp
         <>
           {
             experiencesData.map(item => (
-              <ExperienceCard key={item.id} experienceData={item} />
+              <ExperiencesCard key={item.id} experienceData={item} />
             ))
           }
 
@@ -37,7 +37,7 @@ function ExperiencesList({ className, experienceCategory, experiencesData }: Exp
           </Link>
         </>
       ) : (
-        <EmptyExperienceCard experienceCategory={experienceCategory} />
+        <ExperiencesEmptyCard experienceCategory={experienceCategory} />
       )}
     </div>
   )

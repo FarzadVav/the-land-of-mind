@@ -5,11 +5,11 @@ import { ComponentProps } from "react";
 import { PlusIcon } from "lucide-react";
 import { cn } from "@kadoui/react/utils";
 
-import { HABITS } from "../../../mockData";
-import HabitCard from "../habitCard/HabitCard";
-import EmptyHabitCard from "../emptyHabitCard/EmptyHabitCard";
+import HabitsCard from "../../modules/habitsCard/HabitsCard";
+import HabitEmptyCard from "../habitEmptyCard/HabitEmptyCard";
+import { HABITS } from "@/features/habits/lib/habits.constants";
 
-function HabitsList({ className }: ComponentProps<"div">) {
+function HabitsPageList({ className }: ComponentProps<"div">) {
   return (
     <div className={cn(
       "wrapper space-y-3",
@@ -19,7 +19,7 @@ function HabitsList({ className }: ComponentProps<"div">) {
         <>
           {
             HABITS.data.map(item => (
-              <HabitCard key={item.id} habitData={item} />
+              <HabitsCard key={item.id} habitData={item} />
             ))
           }
 
@@ -32,10 +32,10 @@ function HabitsList({ className }: ComponentProps<"div">) {
           </Link>
         </>
       ) : (
-        <EmptyHabitCard />
+        <HabitEmptyCard />
       )}
     </div>
   )
 }
 
-export default HabitsList;
+export default HabitsPageList;

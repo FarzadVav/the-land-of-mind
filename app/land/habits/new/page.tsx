@@ -1,24 +1,3 @@
-import { Suspense } from "react";
+import HabitsCreatePage from "@/features/habits/components/templates/habitsCreatePage/HabitsCreatePage";
 
-import MobileBar from "@/components/templates/MobileBar/MobileBar";
-import NewAndEditHabitForm from "@/features/habits/components/modules/newAndEditHabitForm/NewAndEditHabitForm";
-
-function LandNewHabitPage() {
-  return (
-    <>
-      <MobileBar>
-        <MobileBar.Title>
-          New Habit
-        </MobileBar.Title>
-
-        <MobileBar.Link />
-      </MobileBar>
-
-      <Suspense>
-        <NewAndEditHabitForm />
-      </Suspense>
-    </>
-  )
-}
-
-export default LandNewHabitPage;
+export default HabitsCreatePage;

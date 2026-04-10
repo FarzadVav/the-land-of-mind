@@ -8,7 +8,7 @@ import { ExperienceCategoryT } from "../../../lib/experiences.types";
 import { EXPERIENCE_CATEGORIES } from "../../../lib/experiences.constants";
 import InputLabel from "@/features/general/components/modules/inputLabel/InputLabel";
 
-function ExperiencesCategoriesForm() {
+function ExperiencesCategoriesPageCreateForm() {
   const [categories, setCategories] = useState<ExperienceCategoryT[]>(EXPERIENCE_CATEGORIES.data);
   const [deletedCategories, setDeletedCategories] = useState<string[]>([]);
   const [newCategories, setNewCategories] = useState<ExperienceCategoryT[]>([]);
@@ -119,4 +119,4 @@ function ExperiencesCategoriesForm() {
   )
 }
 
-export default ExperiencesCategoriesForm;
+export default ExperiencesCategoriesPageCreateForm;

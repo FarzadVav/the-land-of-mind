@@ -3,24 +3,30 @@ import { ComponentProps } from "react";
 import { PlusIcon } from "lucide-react";
 import { cn } from "@kadoui/react/utils";
 
-function EmptyHabitCard({ className }: ComponentProps<"div">) {
+import { ExperienceCategoryT } from "../../../lib/experiences.types";
+
+type ExperiencesEmptyCardPropsT = ComponentProps<"div"> & {
+  experienceCategory: ExperienceCategoryT;
+}
+
+function ExperiencesEmptyCard({ experienceCategory, className }: ExperiencesEmptyCardPropsT) {
   return (
     <div className={cn(
       "card card-y border-2 border-dashed border-background-thin",
       className
     )}>
       <h6 className="title text-center">
-        Habits Is Empty
+        {experienceCategory.title} Experiences Is Empty
       </h6>
       <Link
-        href="/land/habits/new"
+        href={`/land/experiences/new?category=${experienceCategory.id}`}
         className="btn btn-soft element-rounded-full mx-auto palette-primary"
       >
-        <span>Add First Habit</span>
+        <span>Add First Experience</span>
         <PlusIcon className="element-icon-size" />
       </Link>
     </div>
   )
 }
 
-export default EmptyHabitCard
+export default ExperiencesEmptyCard

@@ -1,19 +1,18 @@
 "use client";
 
-import { SubmitEventHandler, useEffect, useState } from "react";
 import { SelectBox, SelectBoxOptionT } from "@kadoui/react";
+import { SubmitEventHandler, useEffect, useState } from "react";
 import { PlusIcon, ChevronDownIcon, EditIcon } from "lucide-react";
 
-import { HABIT_INGAGES } from "../../../lib/habits.constants";
-import InputLabel from "@/components/ui/InputLabel/InputLabel";
-import { HABITS } from "../../../mockData";
+import { HABIT_INGAGES, HABITS } from "@/features/habits/lib/habits.constants";
+import InputLabel from "@/features/general/components/modules/inputLabel/InputLabel";
 
-type NewAndEditHabitFormPropsT = {
+type HabitsCreateOrEditFormPropsT = {
   habitId?: number;
   isEditMode?: boolean;
 }
 
-function NewAndEditHabitForm({ habitId, isEditMode }: NewAndEditHabitFormPropsT) {
+function HabitsCreateOrEditForm({ habitId, isEditMode }: HabitsCreateOrEditFormPropsT) {
   console.log(habitId);
 
   const defaultHabit = HABITS.data.find(item => item.id === habitId);
@@ -108,4 +107,4 @@ function NewAndEditHabitForm({ habitId, isEditMode }: NewAndEditHabitFormPropsT)
   )
 }
 
-export default NewAndEditHabitForm;
+export default HabitsCreateOrEditForm;

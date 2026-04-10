@@ -2,16 +2,17 @@ import Link from "next/link";
 import { Sheet } from "@kadoui/react";
 import { ComponentProps } from "react";
 import { cn } from "@kadoui/react/utils";
-import { EditIcon, MoreVerticalIcon, Trash2Icon } from "lucide-react";
+import { CheckIcon, EditIcon, MoreVerticalIcon, Trash2Icon } from "lucide-react";
 
-import { ExperienceT } from "../../../lib/experiences.types";
+import { HabitT } from "@/features/habits/lib/habits.types";
 import { getDetailDate } from "@/features/general/lib/general.utils";
+import { HABIT_INGAGES } from "@/features/habits/lib/habits.constants";
 
-type ExperienceCardPropsT = ComponentProps<"div"> & {
-  experienceData: ExperienceT;
+type HabitsCardPropsT = ComponentProps<"div"> & {
+  habitData: HabitT;
 }
 
-function ExperienceCard({ experienceData, className }: ExperienceCardPropsT) {
+function HabitsCard({ habitData, className }: HabitsCardPropsT) {
   return (
     <div
       className={cn(
@@ -20,10 +21,10 @@ function ExperienceCard({ experienceData, className }: ExperienceCardPropsT) {
       )}
     >
       <p>
-        {experienceData.title}
+        {habitData.title}
       </p>
       <Sheet>
-        <Sheet.Toggle   >
+        <Sheet.Toggle className="btn btn-ghost element-square-size element-rounded-full shrink-0">
           <MoreVerticalIcon className="element-icon-size" />
         </Sheet.Toggle>
 
@@ -37,31 +38,40 @@ function ExperienceCard({ experienceData, className }: ExperienceCardPropsT) {
               <div className="space-y-3">
                 <div className="flex items-start justify-between gap-3">
                   <p className="title">Title</p>
-                  <p className="text-foreground-thin">{experienceData.title}</p>
+                  <p className="text-foreground-thin">{habitData.title}</p>
                 </div>
                 <div className="flex items-start justify-between gap-3">
-                  <p className="title">Category</p>
+                  <p className="title">Ingage</p>
                   <p className="text-foreground-thin">
-                    {experienceData.category.title}
+                    Per {HABIT_INGAGES.find(item => item.value === habitData.ingage)?.name}
                   </p>
                 </div>
                 <div className="flex items-start justify-between gap-3">
                   <p className="title">Create date</p>
-                  <p className="text-foreground-thin">{getDetailDate(experienceData.createdAt)}</p>
+                  <p className="text-foreground-thin">{getDetailDate(habitData.createdAt)}</p>
+                </div>
+                <div className="flex items-start justify-between gap-3">
+                  <p className="title">Last activity</p>
+                  <p className="text-foreground-thin">{getDetailDate(habitData.updatedAt)}</p>
                 </div>
                 <div className="flex items-start justify-between gap-3">
                   <p className="title">Description</p>
-                  <p className="text-foreground-thin">{experienceData.description}</p>
+                  <p className="text-foreground-thin">{habitData.description}</p>
                 </div>
               </div>
 
-              <div className="flex gap-1.5 mt-12">
-                <button className="btn btn-soft element-rounded-full palette-error w-1/2">
+              <div className="grid grid-cols-2 gap-1.5 mt-12">
+                {/* TODO: add nested Sheet.Body and show a DatePicker and TimePicker */}
+                <button className="btn btn-soft element-rounded-full palette-success col-span-2 element-w-full">
+                  <span>I Do This</span>
+                  <CheckIcon className="element-icon-size" />
+                </button>
+                <button className="btn btn-soft element-rounded-full palette-error element-w-full">
                   <Trash2Icon className="element-icon-size" />
                 </button>
                 <Link
-                  href={`/land/experiences/${experienceData.id}`}
-                  className="btn btn-soft element-rounded-full palette-primary w-1/2"
+                  href={`/land/habits/${habitData.id}`}
+                  className="btn btn-soft element-rounded-full palette-primary element-w-full"
                 >
                   <EditIcon className="element-icon-size" />
                 </Link>
@@ -74,4 +84,4 @@ function ExperienceCard({ experienceData, className }: ExperienceCardPropsT) {
   )
 }
 
-export default ExperienceCard;
+export default HabitsCard;

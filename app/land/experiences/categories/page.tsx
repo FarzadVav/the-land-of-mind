@@ -1,20 +1,3 @@
-import MobileBar from "@/components/templates/MobileBar/MobileBar";
-import ExperiencesCategoriesForm from "@/features/experiences/components/templates/experiencesCategoriesForm/ExperiencesCategoriesForm";
+import ExperiencesCategoriesPage from "@/features/experiences/components/templates/experiencesCategoriesPage/ExperiencesCategoriesPage";
 
-function LandExperiencesCategoriesPage() {
-  return (
-    <>
-      <MobileBar>
-        <MobileBar.Title>
-          Edit Experience
-        </MobileBar.Title>
-
-        <MobileBar.Link />
-      </MobileBar>
-
-      <ExperiencesCategoriesForm />
-    </>
-  )
-}
-
-export default LandExperiencesCategoriesPage;
+export default ExperiencesCategoriesPage;
