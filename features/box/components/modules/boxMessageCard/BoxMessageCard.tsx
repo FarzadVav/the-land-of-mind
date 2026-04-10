@@ -8,7 +8,7 @@ import { cn } from "@kadoui/react/utils";
 import { DownloadIcon, MoreVerticalIcon, ReplyIcon } from "lucide-react";
 
 import { MessageT } from "../../../lib/box.types";
-import { getDetailDate } from "@/lib/date";
+import { getDetailDate } from "@/features/general/lib/general.utils";
 
 type BoxMessageCardPropsT = ComponentProps<"div"> & {
   messageData: MessageT;

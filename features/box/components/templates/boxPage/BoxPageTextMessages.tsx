@@ -1,12 +1,12 @@
 "use client";
 
 import { MESSAGES_BY_TYPE } from "../../../lib/box.constants";
-import BoxMessages from "../boxMessages/BoxMessages";
+import BoxMessages from "../../modules/boxMessages/BoxMessages";
 
-function BoxTextMessages() {
+function BoxPageTextMessages() {
   return (
     <BoxMessages messagesData={MESSAGES_BY_TYPE.data.text} messageType="text" />
   )
 }
 
-export default BoxTextMessages;
+export default BoxPageTextMessages;

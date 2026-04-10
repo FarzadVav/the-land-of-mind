@@ -1,12 +1,12 @@
 "use client";
 
 import { MESSAGES_BY_TYPE } from "../../../lib/box.constants";
-import BoxMessages from "../boxMessages/BoxMessages";
+import BoxMessages from "../../modules/boxMessages/BoxMessages";
 
-function BoxImageMessages() {
+function BoxPageImageMessages() {
   return (
     <BoxMessages messagesData={MESSAGES_BY_TYPE.data.image} messageType="image" />
   )
 }
 
-export default BoxImageMessages;
+export default BoxPageImageMessages;

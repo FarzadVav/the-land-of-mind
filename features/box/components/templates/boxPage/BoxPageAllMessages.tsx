@@ -1,10 +1,10 @@
 "use client";
 
 import { MESSAGES_BY_TYPE } from "../../../lib/box.constants";
-import BoxChatInput from "../boxChatInput/BoxChatInput";
-import BoxMessages from "../boxMessages/BoxMessages";
+import BoxMessages from "../../modules/boxMessages/BoxMessages";
+import BoxChatInput from "../../modules/boxChatInput/BoxChatInput";
 
-function BoxAllMessages() {
+function BoxPageAllMessages() {
   return (
     <>
       <BoxMessages messagesData={MESSAGES_BY_TYPE.data.all} messageType="all" />
@@ -14,4 +14,4 @@ function BoxAllMessages() {
   )
 }
 
-export default BoxAllMessages;
+export default BoxPageAllMessages;

@@ -2,43 +2,43 @@
 
 import { PaginationWithSearchParams } from "@kadoui/react";
 
-import BoxAllMessages from "./BoxAllMessages";
-import BoxTextMessages from "./BoxTextMessages";
-import BoxFileMessages from "./BoxFileMessages";
-import BoxImageMessages from "./BoxImageMessages";
-import BoxVideoMessages from "./BoxVideoMessages";
-import BoxVoiceMessages from "./BoxVoiceMessages";
-import BoxAudioMessages from "./BoxAudioMessages";
+import BoxPageAllMessages from "./BoxPageAllMessages";
+import BoxPageTextMessages from "./BoxPageTextMessages";
+import BoxPageFileMessages from "./BoxPageFileMessages";
+import BoxPageImageMessages from "./BoxPageImageMessages";
+import BoxPageVideoMessages from "./BoxPageVideoMessages";
+import BoxPageVoiceMessages from "./BoxPageVoiceMessages";
+import BoxPageAudioMessages from "./BoxPageAudioMessages";
 
-function BoxTabs() {
+function BoxPageTabs() {
   const PAGES = [
     {
       name: "All",
-      component: <BoxAllMessages />
+      component: <BoxPageAllMessages />
     },
     {
       name: "Text",
-      component: <BoxTextMessages />
+      component: <BoxPageTextMessages />
     },
     {
       name: "Image",
-      component: <BoxImageMessages />
+      component: <BoxPageImageMessages />
     },
     {
       name: "Vidoe",
-      component: <BoxVideoMessages />
+      component: <BoxPageVideoMessages />
     },
     {
       name: "Voice",
-      component: <BoxVoiceMessages />
+      component: <BoxPageVoiceMessages />
     },
     {
       name: "Audio",
-      component: <BoxAudioMessages />
+      component: <BoxPageAudioMessages />
     },
     {
       name: "File",
-      component: <BoxFileMessages />
+      component: <BoxPageFileMessages />
     },
   ];
 
@@ -69,4 +69,4 @@ function BoxTabs() {
   )
 }
 
-export default BoxTabs;
+export default BoxPageTabs;
