@@ -1,22 +1,3 @@
-import { Suspense } from "react";
+import ExperiencesPage from "@/features/experiences/components/templates/experiencesPage/ExperiencesPage";
 
-import MobileBar from "@/components/templates/MobileBar/MobileBar";
-import ExperiencesTabs from "@/features/experiences/components/modules/experiencesTabs/ExperiencesTabs";
-
-function LandExperiencesPage() {
-  return (
-    <>
-      <MobileBar>
-        <MobileBar.Title>
-          Experiences
-        </MobileBar.Title>
-      </MobileBar>
-
-      <Suspense>
-        <ExperiencesTabs />
-      </Suspense>
-    </>
-  )
-}
-
-export default LandExperiencesPage;
+export default ExperiencesPage;

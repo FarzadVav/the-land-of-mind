@@ -1,5 +1,5 @@
 import MobileBar from "@/components/templates/MobileBar/MobileBar";
-import ExperiencesCategoriesForm from "@/features/experiences/components/modules/experiencesCategoriesForm/ExperiencesCategoriesForm";
+import ExperiencesCategoriesForm from "@/features/experiences/components/templates/experiencesCategoriesForm/ExperiencesCategoriesForm";
 
 function LandExperiencesCategoriesPage() {
   return (

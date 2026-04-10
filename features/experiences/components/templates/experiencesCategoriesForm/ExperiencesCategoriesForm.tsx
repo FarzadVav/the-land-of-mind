@@ -6,7 +6,7 @@ import { CheckIcon, PlusIcon, Trash2Icon } from "lucide-react";
 
 import { ExperienceCategoryT } from "../../../lib/experiences.types";
 import { EXPERIENCE_CATEGORIES } from "../../../lib/experiences.constants";
-import InputLabel from "@/components/ui/InputLabel/InputLabel";
+import InputLabel from "@/features/general/components/modules/inputLabel/InputLabel";
 
 function ExperiencesCategoriesForm() {
   const [categories, setCategories] = useState<ExperienceCategoryT[]>(EXPERIENCE_CATEGORIES.data);

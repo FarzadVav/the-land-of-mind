@@ -6,8 +6,8 @@ import { PlusIcon } from "lucide-react";
 import { cn } from "@kadoui/react/utils";
 
 import ExperienceCard from "../experienceCard/ExperienceCard";
-import { ExperienceCategoryT, ExperienceT } from "../../../lib/experiences.types";
 import EmptyExperienceCard from "../emptyExperienceCard/EmptyExperienceCard";
+import { ExperienceCategoryT, ExperienceT } from "../../../lib/experiences.types";
 
 type ExperiencesListPropsT = ComponentProps<"div"> & {
   experiencesData: ExperienceT[];

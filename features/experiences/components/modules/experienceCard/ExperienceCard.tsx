@@ -5,7 +5,7 @@ import { cn } from "@kadoui/react/utils";
 import { EditIcon, MoreVerticalIcon, Trash2Icon } from "lucide-react";
 
 import { ExperienceT } from "../../../lib/experiences.types";
-import { getDetailDate } from "@/lib/date";
+import { getDetailDate } from "@/features/general/lib/general.utils";
 
 type ExperienceCardPropsT = ComponentProps<"div"> & {
   experienceData: ExperienceT;

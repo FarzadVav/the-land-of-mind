@@ -4,10 +4,10 @@ import Link from "next/link";
 import { EditIcon } from "lucide-react";
 import { PaginationWithSearchParams } from "@kadoui/react";
 
+import ExperiencesList from "../../modules/experiencesList/ExperiencesList";
 import { EXPERIENCES_BY_CATEGORY } from "../../../lib/experiences.constants";
-import ExperiencesList from "../experiencesList/ExperiencesList";
 
-function ExperiencesTabs() {
+function ExperiencesPageTabs() {
   const PAGES = EXPERIENCES_BY_CATEGORY.data.map(item => ({
     name: item.category.title,
     component: <ExperiencesList experienceCategory={item.category} experiencesData={item.experiences} />
@@ -46,4 +46,4 @@ function ExperiencesTabs() {
   )
 }
 
-export default ExperiencesTabs
+export default ExperiencesPageTabs

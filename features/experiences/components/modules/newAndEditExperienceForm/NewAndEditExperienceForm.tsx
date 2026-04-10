@@ -6,8 +6,8 @@ import { SelectBox, SelectBoxOptionT } from "@kadoui/react";
 import { SubmitEventHandler, useEffect, useState } from "react";
 import { PlusIcon, ChevronDownIcon, EditIcon, SearchIcon } from "lucide-react";
 
-import { ConstantT } from "@/types/app.types";
-import InputLabel from "@/components/ui/InputLabel/InputLabel";
+import { ConstantT } from "@/features/general/lib/general.types";
+import InputLabel from "@/features/general/components/modules/inputLabel/InputLabel";
 import { EXPERIENCE_CATEGORIES, EXPERIENCES } from "../../../lib/experiences.constants";
 
 type NewAndEditExperienceFormPropsT = {
