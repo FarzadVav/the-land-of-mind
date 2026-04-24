@@ -1,4 +1,4 @@
-import { TodosByTypeT, TodoT, TodoTypeT } from "./todos.types";
+import { TodoIfDontFinishT, TodosByTypeT, TodoT, TodoTypeT } from "./todos.types";
 import { HABITS } from "@/features/habits/lib/habits.constants";
 import { ApiResponseT, ConstantT } from "../../general/lib/general.types";
 
@@ -14,6 +14,7 @@ export const TODOS: ApiResponseT<TodoT[]> = {
       updatedAt: new Date().toLocaleString(),
       description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae accusamus consequuntur possimus placeat repudiandae illo reprehenderit aperiam tempora neque voluptates, dolorum quos porro",
       type: "daily",
+      ifDontFinish: "history",
       subTasks: [
         { id: 1, title: "Signin to a gym", isDone: true },
         { id: 2, title: "Buy creatin powder", isDone: true },
@@ -34,6 +35,7 @@ export const TODOS: ApiResponseT<TodoT[]> = {
       updatedAt: new Date().toLocaleString(),
       description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae accusamus consequuntur possimus placeat repudiandae illo reprehenderit aperiam tempora neque voluptates, dolorum quos porro",
       type: "daily",
+      ifDontFinish: "history",
       subTasks: null,
       relatedHabits: [
         HABITS.data[1]
@@ -49,6 +51,7 @@ export const TODOS: ApiResponseT<TodoT[]> = {
       updatedAt: new Date().toLocaleString(),
       description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae accusamus consequuntur possimus placeat repudiandae illo reprehenderit aperiam tempora neque voluptates, dolorum quos porro",
       type: "weekly",
+      ifDontFinish: "forward",
       subTasks: null,
       relatedHabits: [
         HABITS.data[0],
@@ -65,6 +68,7 @@ export const TODOS: ApiResponseT<TodoT[]> = {
       updatedAt: new Date().toLocaleString(),
       description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae accusamus consequuntur possimus placeat repudiandae illo reprehenderit aperiam tempora neque voluptates, dolorum quos porro",
       type: "weekly",
+      ifDontFinish: "history",
       subTasks: null,
       relatedHabits: [
         HABITS.data[1],
@@ -81,6 +85,7 @@ export const TODOS: ApiResponseT<TodoT[]> = {
       updatedAt: new Date().toLocaleString(),
       description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae accusamus consequuntur possimus placeat repudiandae illo reprehenderit aperiam tempora neque voluptates, dolorum quos porro",
       type: "monthly",
+      ifDontFinish: "forward",
       subTasks: null,
       relatedHabits: [
         HABITS.data[2]
@@ -96,6 +101,7 @@ export const TODOS: ApiResponseT<TodoT[]> = {
       updatedAt: new Date().toLocaleString(),
       description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae accusamus consequuntur possimus placeat repudiandae illo reprehenderit aperiam tempora neque voluptates, dolorum quos porro",
       type: "monthly",
+      ifDontFinish: "forward",
       subTasks: null,
       relatedHabits: [
         HABITS.data[0],
@@ -113,6 +119,7 @@ export const TODOS: ApiResponseT<TodoT[]> = {
       updatedAt: new Date().toLocaleString(),
       description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae accusamus consequuntur possimus placeat repudiandae illo reprehenderit aperiam tempora neque voluptates, dolorum quos porro",
       type: "annual",
+      ifDontFinish: "extend",
       subTasks: null,
       relatedHabits: null
     },
@@ -126,6 +133,7 @@ export const TODOS: ApiResponseT<TodoT[]> = {
       updatedAt: new Date().toLocaleString(),
       description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae accusamus consequuntur possimus placeat repudiandae illo reprehenderit aperiam tempora neque voluptates, dolorum quos porro",
       type: "annual",
+      ifDontFinish: "extend",
       subTasks: null,
       relatedHabits: null
     }

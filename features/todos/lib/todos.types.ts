@@ -8,6 +8,8 @@ export type TodoSubTaskT = {
   isDone: boolean;
 }
 
+export type TodoIfDontFinishT = "forward" | "history" | "extend";
+
 export type TodoT = {
   id: number;
   title: string;
@@ -17,10 +19,11 @@ export type TodoT = {
   updatedAt: string;
   doneAt: string | null;
   description: string | null;
-
+  
   type: TodoTypeT;
-  subTasks: TodoSubTaskT[] | null;
   relatedHabits: HabitT[] | null;
+  ifDontFinish: TodoIfDontFinishT;
+  subTasks: TodoSubTaskT[] | null;
 }
 
 export type TodosByTypeT = Record<TodoTypeT, TodoT[]>;

@@ -1,13 +1,15 @@
 "use client";
 
 import { useSearchParams } from "next/navigation";
-import { SelectBox, SelectBoxOptionT } from "@kadoui/react";
 import { SubmitEventHandler, useEffect, useState } from "react";
+import { Choice, SelectBox, SelectBoxOptionT } from "@kadoui/react";
 import { PlusIcon, ChevronDownIcon, EditIcon, SearchIcon } from "lucide-react";
 
 import { HABITS } from "@/features/habits/lib/habits.constants";
 import { TODO_TYPES, TODOS } from "../../../lib/todos.constants";
 import { ConstantT } from "@/features/general/lib/general.types";
+import { getTodoIfDontFinishOptions } from "@/features/todos/lib/todos.utils";
+import { TodoIfDontFinishT, TodoTypeT } from "@/features/todos/lib/todos.types";
 import InputLabel from "@/features/general/components/modules/inputLabel/InputLabel";
 
 const HABITS_CONSTANT: ConstantT<string>[] = HABITS.data.map(item => ({
@@ -28,15 +30,18 @@ function TodosCreateOrEditForm({ todoId, isEditMode }: TodosCreateOrEditFormProp
   const defaultTodo = TODOS.data.find(item => item.id === todoId);
 
   const [selectedType, setSelectedType] =
-    useState<SelectBoxOptionT | null>(null);
+    useState<SelectBoxOptionT>(TODO_TYPES[0]);
   const [selectedHabits, setSelectedHabits] =
     useState<SelectBoxOptionT[]>([]);
+  const [ifDontFinish, setIfDontFinish] =
+    useState<TodoIfDontFinishT>("history");
 
   useEffect(() => {
     if (defaultTodo) {
       setSelectedType(
-        TODO_TYPES.find(item => item.value === defaultTodo.type) || null
+        TODO_TYPES.find(item => item.value === defaultTodo.type) || TODO_TYPES[0]
       );
+      setIfDontFinish(defaultTodo.ifDontFinish);
       if (defaultTodo.relatedHabits?.length) {
         setSelectedHabits(
           defaultTodo.relatedHabits.map(item => ({ name: item.title, value: item.id.toString() }))
@@ -105,17 +110,23 @@ function TodosCreateOrEditForm({ todoId, isEditMode }: TodosCreateOrEditFormProp
       <InputLabel required htmlFor="type-field">
         Type
       </InputLabel>
+      {/* TODO: fix it that input value can't update after select new thing */}
       <SelectBox
         direction="y"
         options={TODO_TYPES}
         optionValue={selectedType}
-        setOptionValue={setSelectedType}
+        setOptionValue={(value) => {
+          if (value) {
+            setIfDontFinish("history");
+            setSelectedType(value);
+          }
+        }}
       >
         <SelectBox.Input className="select-box-input input input-outline group" htmlFor="type-field">
           <ChevronDownIcon className="element-icon-size transition-transform group-focus-within:-scale-y-100" />
           <SelectBox.Field
-            id="type-field"
             type="text"
+            id="type-field"
             name="type-field"
             className="input-field"
             placeholder="Select a type..."
@@ -189,6 +200,32 @@ function TodosCreateOrEditForm({ todoId, isEditMode }: TodosCreateOrEditFormProp
           </SelectBox.List>
         </SelectBox.Input>
       </SelectBox>
+
+      <InputLabel required htmlFor="ifDontFinish">
+        If you don't finish the todo
+      </InputLabel>
+      <Choice
+        direction="y"
+        choiceState={ifDontFinish}
+        onChoiceChange={(value) => value && setIfDontFinish(value as TodoIfDontFinishT)}
+      >
+        {getTodoIfDontFinishOptions(selectedType.value as TodoTypeT).map((item) => (
+          // TODO: fix Choice title
+          <div
+            key={item.ifDontFinish}
+            onClick={() => setIfDontFinish(item.ifDontFinish)}
+            className="flex items-center gap-1.5 not-first:mt-3"
+          >
+            <Choice.Toggle
+              choiceName={item.ifDontFinish}
+              className="choice choice-radio element-sm"
+            >
+              <Choice.Thumb className="choice choice-radio-thumb" />
+            </Choice.Toggle>
+            <span>{item.title}</span>
+          </div>
+        ))}
+      </Choice>
 
       <button className="btn btn-soft element-rounded-full mx-auto palette-success mt-12">
         <span>
