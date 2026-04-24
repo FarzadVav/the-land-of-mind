@@ -2,7 +2,7 @@ import Link from "next/link";
 import { Sheet } from "@kadoui/react";
 import { ComponentProps } from "react";
 import { cn } from "@kadoui/react/utils";
-import { CheckIcon, EditIcon, MoreVerticalIcon, Trash2Icon } from "lucide-react";
+import { CheckIcon, EditIcon, MoreVerticalIcon, RefreshCwIcon, Trash2Icon } from "lucide-react";
 
 import { TodoT } from "../../../lib/todos.types";
 import { getDetailDate } from "@/features/general/lib/general.utils";
@@ -12,7 +12,7 @@ type TodosCardPropsT = ComponentProps<"div"> & {
   historyMode?: boolean;
 }
 
-function TodoCards({ todoData, historyMode, className }: TodosCardPropsT) {
+function TodosCard({ todoData, historyMode, className }: TodosCardPropsT) {
   return (
     <div
       className={cn(
@@ -35,7 +35,7 @@ function TodoCards({ todoData, historyMode, className }: TodosCardPropsT) {
                 <Sheet.Handlebar className="sheet-handlebar" />
               </Sheet.Header>
 
-              <Sheet.Content className="sheet-content">
+              <Sheet.Content className="sheet-content flex flex-col">
                 <div className="space-y-3">
                   <div className="flex items-start justify-between gap-3">
                     <p className="title">Title</p>
@@ -87,33 +87,41 @@ function TodoCards({ todoData, historyMode, className }: TodosCardPropsT) {
                   )}
                 </div>
 
-                {historyMode ? (
-                  <button className="btn btn-soft element-w-full mt-12 element-rounded-full palette-error">
-                    <span>Delete For Ever</span>
-                    <Trash2Icon className="element-icon-size" />
-                  </button>
-                ) : (
-                  <div className="flex mt-12 gap-1.5">
-                    <button className={`btn btn-soft palette-error element-rounded-full ${todoData.isDone ? "element-w-full" : "w-1/3"}`}>
-                      <Trash2Icon className="element-icon-size" />
-                    </button>
-                    {
-                      todoData.isDone ? null : (
-                        <>
-                          <Link
-                            href={`/land/todos/${todoData.id}`}
-                            className="btn w-1/3 btn-soft palette-primary element-rounded-full"
-                          >
-                            <EditIcon className="element-icon-size" />
-                          </Link>
-                          <button className="btn w-1/3 btn-soft palette-success element-rounded-full">
-                            <CheckIcon className="element-icon-size" />
-                          </button>
-                        </>
-                      )
-                    }
-                  </div>
-                )}
+                <div className="flex pt-12 mt-auto gap-1.5">
+                  {historyMode ? (
+                    <>
+                      <button className="btn btn-soft w-1/2 element-rounded-full palette-error">
+                        <span>Delete</span>
+                        <Trash2Icon className="element-icon-size" />
+                      </button>
+                      <button className="btn btn-soft w-1/2 element-rounded-full palette-primary">
+                        <span>Redo</span>
+                        <RefreshCwIcon className="element-icon-size" />
+                      </button>
+                    </>
+                  ) : (
+                    <>
+                      <button className={`btn btn-soft palette-error element-rounded-full ${todoData.isDone ? "element-w-full" : "w-1/3"}`}>
+                        <Trash2Icon className="element-icon-size" />
+                      </button>
+                      {
+                        todoData.isDone ? null : (
+                          <>
+                            <Link
+                              href={`/land/todos/${todoData.id}`}
+                              className="btn w-1/3 btn-soft palette-primary element-rounded-full"
+                            >
+                              <EditIcon className="element-icon-size" />
+                            </Link>
+                            <button className="btn w-1/3 btn-soft palette-success element-rounded-full">
+                              <CheckIcon className="element-icon-size" />
+                            </button>
+                          </>
+                        )
+                      }
+                    </>
+                  )}
+                </div>
               </Sheet.Content>
             </Sheet.Body>
           </Sheet.Portal>
@@ -139,4 +147,4 @@ function TodoCards({ todoData, historyMode, className }: TodosCardPropsT) {
   )
 }
 
-export default TodoCards;
+export default TodosCard;

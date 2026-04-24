@@ -6,7 +6,7 @@ import { cn } from "@kadoui/react/utils";
 import { useSearchParams } from "next/navigation";
 import { ArrowRightIcon, PlusIcon } from "lucide-react";
 
-import TodoCards from "../todosCard/TodosCard";
+import TodosCard from "../todosCard/TodosCard";
 import { getTodoType } from "../../../lib/todos.utils";
 import TodosEmptyCard from "../todosEmptyCard/TodosEmptyCard";
 import { TodoT, TodoTypeT } from "../../../lib/todos.types";
@@ -31,7 +31,7 @@ function TodosList({ className, todosListData, todoType, historyMode }: TodosLis
         <>
           {
             todosListData.map(item => (
-              <TodoCards historyMode={historyMode} key={item.id} todoData={item} />
+              <TodosCard historyMode={historyMode} key={item.id} todoData={item} />
             ))
           }
 
