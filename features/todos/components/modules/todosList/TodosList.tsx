@@ -4,12 +4,13 @@ import Link from "next/link";
 import { ComponentProps } from "react";
 import { cn } from "@kadoui/react/utils";
 import { useSearchParams } from "next/navigation";
-import { ArrowRightIcon, PlusIcon } from "lucide-react";
+import { ArrowRightIcon, EraserIcon, PlusIcon } from "lucide-react";
 
 import TodosCard from "../todosCard/TodosCard";
 import { getTodoType } from "../../../lib/todos.utils";
 import TodosEmptyCard from "../todosEmptyCard/TodosEmptyCard";
 import { TodoT, TodoTypeT } from "../../../lib/todos.types";
+import { Modal } from "@kadoui/react";
 
 type TodosListPropsT = ComponentProps<"div"> & {
   todoType: TodoTypeT;
@@ -36,7 +37,34 @@ function TodosList({ className, todosListData, todoType, historyMode }: TodosLis
           }
 
           {
-            historyMode ? null : (
+            historyMode ? (
+              <Modal>
+                <Modal.Toggle className="btn btn-soft palette-error element-rounded-full mx-auto mt-6">
+                  <span>Clear History</span>
+                  <EraserIcon className="element-icon-size" />
+                </Modal.Toggle>
+
+                <Modal.Portal className="modal-portal">
+                  <Modal.Body className="modal-body">
+                    <Modal.Header className="modal-header">
+                      <p className="w-full font-bold text-center">
+                        Are you sure about it?
+                      </p>
+                    </Modal.Header>
+                    <Modal.Content className="modal-content">
+                      <div className="flex gap-3 ">
+                        <Modal.Toggle className="btn btn-soft palette-error element-rounded-full w-1/2">
+                          Yes
+                        </Modal.Toggle>
+                        <Modal.Toggle className="btn btn-ghost element-rounded-full w-1/2">
+                          Cancel
+                        </Modal.Toggle>
+                      </div>
+                    </Modal.Content>
+                  </Modal.Body>
+                </Modal.Portal>
+              </Modal>
+            ) : (
               <>
                 <Link
                   href={`/land/todos/history?type=${spType}`}

@@ -131,6 +131,20 @@
 
 /* Customize */
 
-@utility btn-fill {
+.btn-fill {
   @apply font-bold;
+}
+
+.modal-portal {
+  @apply justify-center items-center;
+}
+
+.modal-body {
+  @apply max-sm:w-full sm:min-w-160 max-w-full;
+}
+
+.modal-header,
+.modal-content,
+.modal-footer {
+  @apply p-6;
 }
