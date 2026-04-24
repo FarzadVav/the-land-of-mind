@@ -38,6 +38,7 @@ function TodosList({ className, todosListData, todoType, historyMode }: TodosLis
 
           {
             historyMode ? (
+              // TODO: convert this modal to ConfirmModal
               <Modal>
                 <Modal.Toggle className="btn btn-soft palette-error element-rounded-full mx-auto mt-6">
                   <span>Clear History</span>

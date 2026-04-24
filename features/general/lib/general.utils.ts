@@ -1,3 +1,47 @@
+import { PeriodT } from "./general.types";
+
+export const getPeriodValue =
+  (period: PeriodT): { word: string; period: string } => {
+    switch (period) {
+      case "daily": {
+        return {
+          word: "Day",
+          period: "Daily"
+        }
+      }
+
+      case "weekly": {
+        return {
+          word: "Week",
+          period: "Weekly"
+        }
+      }
+
+      case "monthly": {
+        return {
+          word: "Month",
+          period: "Monthly"
+        }
+      }
+
+      case "annual": {
+        return {
+          word: "Year",
+          period: "Annual"
+        }
+      }
+
+      default: {
+        return {
+          word: "",
+          period: ""
+        }
+      }
+    }
+  }
+
+// Date ⬇️
+
 export const getCurrentMonth = () => {
   return new Date().toString().split(" ")[1];
 }

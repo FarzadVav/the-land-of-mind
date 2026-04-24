@@ -13,4 +13,4 @@ export type ConstantT<T> = {
   value: T;
 }
 
-export type PlanPeriodT = "daily" | "weekly" | "monthly" | "annual";
+export type PeriodT = "daily" | "weekly" | "monthly" | "annual";

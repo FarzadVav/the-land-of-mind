@@ -1,6 +1,6 @@
-import { TodoIfDontFinishT, TodosByTypeT, TodoT, TodoTypeT } from "./todos.types";
 import { HABITS } from "@/features/habits/lib/habits.constants";
 import { ApiResponseT, ConstantT } from "../../general/lib/general.types";
+import { TodosAnalysisT, TodosByTypeT, TodoT, TodoTypeT } from "./todos.types";
 
 export const TODOS: ApiResponseT<TodoT[]> = {
   data: [
@@ -161,7 +161,33 @@ export const TODOS_BY_TYPE: ApiResponseT<TodosByTypeT> = {
     ]
   },
   errors: null
-}
+};
+
+export const TODOS_ANALYSIS: ApiResponseT<TodosAnalysisT> = {
+  data: {
+    daily: {
+      all: 9_350,
+      done: 8_000,
+      unFinished: 1_350
+    },
+    weekly: {
+      all: 8_350,
+      done: 2_000,
+      unFinished: 6_350
+    },
+    monthly: {
+      all: 155,
+      done: 141,
+      unFinished: 14
+    },
+    annual: {
+      all: 21,
+      done: 20,
+      unFinished: 1
+    }
+  },
+  errors: null
+};
 
 export const TODO_TYPES: ConstantT<TodoTypeT>[] = [
   { name: "Daily", value: "daily" },

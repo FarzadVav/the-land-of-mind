@@ -1,4 +1,3 @@
-import { LucideProps } from "lucide-react";
 import { TodoIfDontFinishT, TodoTypeT } from "./todos.types";
 
 export const getTodoType = (todoType: TodoTypeT) => {

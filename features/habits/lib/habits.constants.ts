@@ -15,7 +15,8 @@ export const HABITS: ApiResponseT<HabitT[]> = {
       createdAt: new Date().toLocaleString(),
       updatedAt: new Date().toLocaleString(),
       description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae accusamus consequuntur possimus placeat repudiandae illo reprehenderit aperiam tempora neque voluptates, dolorum quos porro",
-      ingage: "daily"
+      ingage: "daily",
+      doingCount: 32
     },
     {
       id: 2,
@@ -23,7 +24,8 @@ export const HABITS: ApiResponseT<HabitT[]> = {
       createdAt: new Date().toLocaleString(),
       updatedAt: new Date().toLocaleString(),
       description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae accusamus consequuntur possimus placeat repudiandae illo reprehenderit aperiam tempora neque voluptates, dolorum quos porro",
-      ingage: "weekly"
+      ingage: "weekly",
+      doingCount: 991
     },
     {
       id: 3,
@@ -31,7 +33,8 @@ export const HABITS: ApiResponseT<HabitT[]> = {
       createdAt: new Date().toLocaleString(),
       updatedAt: new Date().toLocaleString(),
       description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae accusamus consequuntur possimus placeat repudiandae illo reprehenderit aperiam tempora neque voluptates, dolorum quos porro",
-      ingage: "monthly"
+      ingage: "monthly",
+      doingCount: 10_301
     }
   ],
   errors: null

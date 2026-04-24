@@ -1,7 +1,7 @@
 import { HabitT } from "@/features/habits/lib/habits.types";
-import { PlanPeriodT } from "@/features/general/lib/general.types";
+import { PeriodT } from "@/features/general/lib/general.types";
 
-export type TodoTypeT = PlanPeriodT;
+export type TodoTypeT = PeriodT;
 
 export type TodoSubTaskT = {
   id: number;
@@ -20,7 +20,7 @@ export type TodoT = {
   updatedAt: string;
   doneAt: string | null;
   description: string | null;
-  
+
   type: TodoTypeT;
   relatedHabits: HabitT[] | null;
   ifDontFinish: TodoIfDontFinishT;
@@ -28,3 +28,8 @@ export type TodoT = {
 }
 
 export type TodosByTypeT = Record<TodoTypeT, TodoT[]>;
+
+export type TodosAnalysisT = Record<
+  TodoTypeT,
+  { all: number; done: number; unFinished: number; }
+>;

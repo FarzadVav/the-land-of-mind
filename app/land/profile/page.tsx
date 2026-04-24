@@ -1,3 +1,3 @@
-import UserProfilePage from "@/features/user/components/templates/userProfilePage/UserProfilePage";
+import ProfilePage from "@/features/user/components/pages/profilePage/ProfilePage";
 
-export default UserProfilePage;
+export default ProfilePage;
