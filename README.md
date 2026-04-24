@@ -8,7 +8,7 @@
     - Add/Edit (Title, Description, Type, Deadline, Sub tasks, Related habits, If you don't (Move to prev time, Move to history, Extend for next time))
     - History (Delete for ever, Re-do)
   - Habits
-    - Add/Edit (Title, Description, Ingage (Daily, Weekly, Monthly, Annual))
+    - Add/Edit (Title, Description, Ingage (Daily, Weekly, Monthly))
     - Mannual doing
   - Experiences (Categorise)
     - Add/Edit (Title, Description, Category)

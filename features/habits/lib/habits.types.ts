@@ -1,4 +1,6 @@
-export type HabitIngageT = "day" | "week" | "month";
+import { PlanPeriodT } from "@/features/general/lib/general.types";
+
+export type HabitIngageT = Exclude<PlanPeriodT, "annual">;
 
 export type HabitT = {
   id: number;

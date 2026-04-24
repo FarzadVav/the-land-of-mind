@@ -2,9 +2,9 @@ import { HabitIngageT, HabitT } from "./habits.types";
 import { ApiResponseT, ConstantT } from "@/features/general/lib/general.types";
 
 export const HABIT_INGAGES: ConstantT<HabitIngageT>[] = [
-  { name: "Per Day", value: "day" },
-  { name: "Per Week", value: "week" },
-  { name: "Per Month", value: "month" },
+  { name: "Per Day", value: "daily" },
+  { name: "Per Week", value: "weekly" },
+  { name: "Per Month", value: "monthly" }
 ];
 
 export const HABITS: ApiResponseT<HabitT[]> = {
@@ -15,7 +15,7 @@ export const HABITS: ApiResponseT<HabitT[]> = {
       createdAt: new Date().toLocaleString(),
       updatedAt: new Date().toLocaleString(),
       description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae accusamus consequuntur possimus placeat repudiandae illo reprehenderit aperiam tempora neque voluptates, dolorum quos porro",
-      ingage: "day"
+      ingage: "daily"
     },
     {
       id: 2,
@@ -23,7 +23,7 @@ export const HABITS: ApiResponseT<HabitT[]> = {
       createdAt: new Date().toLocaleString(),
       updatedAt: new Date().toLocaleString(),
       description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae accusamus consequuntur possimus placeat repudiandae illo reprehenderit aperiam tempora neque voluptates, dolorum quos porro",
-      ingage: "week"
+      ingage: "weekly"
     },
     {
       id: 3,
@@ -31,7 +31,7 @@ export const HABITS: ApiResponseT<HabitT[]> = {
       createdAt: new Date().toLocaleString(),
       updatedAt: new Date().toLocaleString(),
       description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae accusamus consequuntur possimus placeat repudiandae illo reprehenderit aperiam tempora neque voluptates, dolorum quos porro",
-      ingage: "month"
+      ingage: "monthly"
     }
   ],
   errors: null

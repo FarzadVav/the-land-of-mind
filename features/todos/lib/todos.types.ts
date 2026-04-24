@@ -1,6 +1,7 @@
 import { HabitT } from "@/features/habits/lib/habits.types";
+import { PlanPeriodT } from "@/features/general/lib/general.types";
 
-export type TodoTypeT = "daily" | "weekly" | "monthly" | "annual";
+export type TodoTypeT = PlanPeriodT;
 
 export type TodoSubTaskT = {
   id: number;
