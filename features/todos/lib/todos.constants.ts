@@ -128,33 +128,7 @@ export const TODOS: ApiResponseT<TodoT[]> = {
       type: "annual",
       subTasks: null,
       relatedHabits: null
-    },
-    {
-      id: 9,
-      title: "Get married with Reyhoon",
-      isDone: false,
-      doneAt: null,
-      deadline: new Date().toLocaleString(),
-      createdAt: new Date().toLocaleString(),
-      updatedAt: new Date().toLocaleString(),
-      description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae accusamus consequuntur possimus placeat repudiandae illo reprehenderit aperiam tempora neque voluptates, dolorum quos porro",
-      type: "future",
-      subTasks: null,
-      relatedHabits: null
-    },
-    {
-      id: 10,
-      title: "Buy a KMC J7",
-      isDone: false,
-      doneAt: null,
-      deadline: new Date().toLocaleString(),
-      createdAt: new Date().toLocaleString(),
-      updatedAt: new Date().toLocaleString(),
-      description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae accusamus consequuntur possimus placeat repudiandae illo reprehenderit aperiam tempora neque voluptates, dolorum quos porro",
-      type: "future",
-      subTasks: null,
-      relatedHabits: null
-    },
+    }
   ],
   errors: null
 };
@@ -176,10 +150,6 @@ export const TODOS_BY_TYPE: ApiResponseT<TodosByTypeT> = {
     annual: [
       TODOS.data[6],
       TODOS.data[7]
-    ],
-    future: [
-      TODOS.data[8],
-      TODOS.data[9]
     ]
   },
   errors: null
@@ -189,6 +159,5 @@ export const TODO_TYPES: ConstantT<TodoTypeT>[] = [
   { name: "Daily", value: "daily" },
   { name: "Weekly", value: "weekly" },
   { name: "Monthly", value: "monthly" },
-  { name: "Annual", value: "annual" },
-  { name: "Future", value: "future" },
+  { name: "Annual", value: "annual" }
 ];

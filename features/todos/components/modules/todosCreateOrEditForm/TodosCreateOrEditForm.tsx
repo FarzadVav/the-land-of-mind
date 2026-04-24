@@ -65,8 +65,7 @@ function TodosCreateOrEditForm({ todoId, isEditMode }: TodosCreateOrEditFormProp
     console.log("title --->", fd.get("title"));
     console.log("description --->", fd.get("description"));
     console.log("type --->", fd.get("type"));
-    console.log("deadlineDate --->", fd.get("deadlineDate"));
-    console.log("deadlineTime --->", fd.get("deadlineTime"));
+    console.log("deadline --->", fd.get("deadline"));
     console.log("subTasks --->", fd.get("subTasks"));
     console.log("relatedHabits --->", fd.get("relatedHabits"));
   }
@@ -129,83 +128,67 @@ function TodosCreateOrEditForm({ todoId, isEditMode }: TodosCreateOrEditFormProp
         </SelectBox.Input>
       </SelectBox>
 
-      {selectedType && selectedType.value !== "future" ? (
-        <>
-          {/* TODO: add a DatePicker */}
-          <InputLabel required htmlFor="deadlineDate">
-            Deadline
-          </InputLabel>
-          <label htmlFor="deadlineDate" className="input input-outline">
-            <input
-              type="date"
-              id="deadlineDate"
-              name="deadlineDate"
-              className="input-field"
-              defaultValue={defaultTodo?.deadline}
-            />
-          </label>
-          {/* TODO: add a TimePicker */}
-          {selectedType.value === "daily" ? (
-            <label htmlFor="deadlineTime" className="input input-outline mt-2">
-              <input
-                type="date"
-                id="deadlineTime"
-                name="deadlineTime"
-                className="input-field"
-                defaultValue={defaultTodo?.deadline}
-              />
-            </label>
-          ) : null}
+      {/* TODO: add TimePicker for daily and DatePicker for other */}
+      <InputLabel required htmlFor="deadline">
+        Deadline
+      </InputLabel>
+      <label htmlFor="deadline" className="input input-outline">
+        <input
+          type="date"
+          id="deadline"
+          name="deadline"
+          className="input-field"
+          defaultValue={defaultTodo?.deadline}
+        />
+      </label>
 
-          {/* TODO: add AddInput and in the following */}
-          <InputLabel htmlFor="subTasks">
-            Sub tasks
-          </InputLabel>
-          <label htmlFor="subTasks" className="input input-outline">
-            <input
-              type="text"
-              id="subTasks"
-              name="subTasks"
-              className="input-field"
-              placeholder="Something to do..."
-              defaultValue={defaultTodo?.subTasks ? JSON.stringify(defaultTodo.subTasks) : undefined}
-            />
-          </label>
+      {/* TODO: add AddInput and in the following */}
+      <InputLabel htmlFor="subTasks">
+        Sub tasks
+      </InputLabel>
+      <label htmlFor="subTasks" className="input input-outline">
+        <input
+          type="text"
+          id="subTasks"
+          name="subTasks"
+          className="input-field"
+          placeholder="Something to do..."
+          defaultValue={defaultTodo?.subTasks ? JSON.stringify(defaultTodo.subTasks) : undefined}
+        />
+      </label>
 
-          <InputLabel htmlFor="relatedHabits-field">
-            Related habits
-          </InputLabel>
-          {/* TODO: add safe browser area position */}
-          {/* TODO: fix offset logic */}
-          <SelectBox
-            multiSelect
-            direction="y"
-            options={HABITS_CONSTANT}
-            optionValue={selectedHabits}
-            setOptionValue={setSelectedHabits}
-          >
-            <SelectBox.Input className="select-box-input input input-outline group" htmlFor="subTasks">
-              <ChevronDownIcon className="element-icon-size transition-transform group-focus-within:-scale-y-100" />
-              <SelectBox.Field
-                type="text"
-                className="input-field"
-                id="relatedHabits-field"
-                name="relatedHabits-field"
-                placeholder="Select some habits..."
-              />
-              <SelectBox.List className="select-box-list offset bg-background-thin">
-                <SelectBox.SearchInput className="input input-outline">
-                  <SearchIcon className="element-icon-size" />
-                  <SelectBox.SearchField className="input-field" />
-                </SelectBox.SearchInput>
-                <SelectBox.Options
-                  className="select-box-option data-[state=false]:element-rounded-full data-[state=false]:btn-soft data-[state=true]:btn-fill"
-                />
-              </SelectBox.List>
-            </SelectBox.Input>
-          </SelectBox>
-        </>
-      ) : null}
+      <InputLabel htmlFor="relatedHabits-field">
+        Related habits
+      </InputLabel>
+      {/* TODO: add safe browser area position */}
+      {/* TODO: fix offset logic */}
+      <SelectBox
+        multiSelect
+        direction="y"
+        options={HABITS_CONSTANT}
+        optionValue={selectedHabits}
+        setOptionValue={setSelectedHabits}
+      >
+        <SelectBox.Input className="select-box-input input input-outline group" htmlFor="subTasks">
+          <ChevronDownIcon className="element-icon-size transition-transform group-focus-within:-scale-y-100" />
+          <SelectBox.Field
+            type="text"
+            className="input-field"
+            id="relatedHabits-field"
+            name="relatedHabits-field"
+            placeholder="Select some habits..."
+          />
+          <SelectBox.List className="select-box-list offset bg-background-thin">
+            <SelectBox.SearchInput className="input input-outline">
+              <SearchIcon className="element-icon-size" />
+              <SelectBox.SearchField className="input-field" />
+            </SelectBox.SearchInput>
+            <SelectBox.Options
+              className="select-box-option data-[state=false]:element-rounded-full data-[state=false]:btn-soft data-[state=true]:btn-fill"
+            />
+          </SelectBox.List>
+        </SelectBox.Input>
+      </SelectBox>
 
       <button className="btn btn-soft element-rounded-full mx-auto palette-success mt-12">
         <span>

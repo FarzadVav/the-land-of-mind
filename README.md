@@ -28,3 +28,4 @@
 - Add annual habit
 - Keep todos form single-logic
 - Fix todos and habits forms after edit
+- Re-do history todos

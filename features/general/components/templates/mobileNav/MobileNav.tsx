@@ -38,7 +38,7 @@ function MobileNav() {
           <NotebookPenIcon className="element-icon-size" />
           <span className="sub-text">Experiences</span>
         </Link>
-        {/* NOTE: for future */}
+        {/* NOTE: for later */}
         {/* <Link
           href={"/land/box"}
           className={`h-full w-1/3 flex items-center justify-center flex-col gap-1.5 transition-colors
@@ -48,7 +48,7 @@ function MobileNav() {
           <span className="sub-text">Box</span>
         </Link> */}
 
-        {/* NOTE: for future */}
+        {/* NOTE: for later */}
         {/* <FloatingAIButton /> */}
       </nav>
     </RotueProtector>

@@ -4,7 +4,6 @@ import { PaginationWithSearchParams } from "@kadoui/react";
 
 import TodosTabsDaily from "./TodosTabsDaily";
 import TodosTabsWeekly from "./TodosTabsWeekly";
-import TodosTabsFuture from "./TodosTabsFuture";
 import TodosTabsAnnual from "./TodosTabsAnnual";
 import TodosTabsMonthly from "./TodosTabsMonthly";
 
@@ -29,11 +28,7 @@ function TodosTabs({ historyMode }: TodosTabsPropsT) {
     {
       name: "Annual",
       component: <TodosTabsAnnual historyMode={historyMode} />
-    },
-    {
-      name: "Future",
-      component: <TodosTabsFuture historyMode={historyMode} />
-    },
+    }
   ];
 
   return (

@@ -19,7 +19,7 @@ export const getTodoType = (todoType: TodoTypeT) => {
     }
 
     default: {
-      return "Future";
+      return "";
     }
   }
 }
