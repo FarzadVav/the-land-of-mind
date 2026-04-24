@@ -97,8 +97,8 @@
 
   /* TODO: add this to kadoui */
   * {
-    font-size: var(--element-text) !important;
-    line-height: var(--element-line) !important;
+    font-size: var(--element-text);
+    line-height: var(--element-line);
   }
 }
 
