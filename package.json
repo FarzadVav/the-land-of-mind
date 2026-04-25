@@ -1,5 +1,8 @@
 {
   "name": "the-land-of-mind",
   "private": true,
+  "scripts": {
+    "frontend": "pnpm --filter the-land-of-mind_frontend dev"
+  },
   "packageManager": "pnpm@10.25.0"
 }
