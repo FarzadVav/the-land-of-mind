@@ -1,0 +1,1 @@
+export type ThemeT = "system" | "light" | "dark";

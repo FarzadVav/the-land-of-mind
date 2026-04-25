@@ -1,0 +1,3 @@
+import ExperiencesCategoriesPage from "@/features/experiences/components/templates/experiencesCategoriesPage/ExperiencesCategoriesPage";
+
+export default ExperiencesCategoriesPage;
