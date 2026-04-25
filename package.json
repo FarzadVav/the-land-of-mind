@@ -2,7 +2,18 @@
   "name": "the-land-of-mind",
   "private": true,
   "scripts": {
+    "backup": "tsx backup.ts",
     "frontend": "pnpm --filter the-land-of-mind_frontend dev"
   },
-  "packageManager": "pnpm@10.25.0"
+  "packageManager": "pnpm@10.25.0",
+  "dependencies": {
+    "archiver": "^7.0.1",
+    "ignore": "^7.0.5"
+  },
+  "devDependencies": {
+    "@types/archiver": "^7.0.0",
+    "@types/node": "^20.19.39",
+    "tsx": "^4.21.0",
+    "typescript": "5.9.3"
+  }
 }
