@@ -2,19 +2,37 @@
   "name": "the-land-of-mind",
   "scripts": {
     "backup": "tsx backup.ts",
+    
     "dev:f": "pnpm --filter the-land-of-mind_frontend dev",
     "build:f": "pnpm --filter the-land-of-mind_frontend build",
-    "start:f": "pnpm --filter the-land-of-mind_frontend start"
+    "start:f": "pnpm --filter the-land-of-mind_frontend start",
+    "lint:f": "pnpm --filter the-land-of-mind_frontend lint",
+
+    "dev:b": "pnpm --filter the-land-of-mind_backend start:dev",
+    "build:b": "pnpm --filter the-land-of-mind_backend build",
+    "start:b": "pnpm --filter the-land-of-mind_backend start",
+    "start:debug:b": "pnpm --filter the-land-of-mind_backend start:debug",
+    "start:prod:b": "pnpm --filter the-land-of-mind_backend start:prod",
+    "lint:b": "pnpm --filter the-land-of-mind_backend lint",
+    "format:b": "pnpm --filter the-land-of-mind_backend format"
   },
   "dependencies": {
     "archiver": "^7.0.1",
     "ignore": "^7.0.5"
   },
   "devDependencies": {
+    "@eslint/js": "^9.18.0",
     "@types/archiver": "^7.0.0",
     "@types/node": "^20.19.39",
+    "eslint": "^9.18.0",
+    "eslint-config-prettier": "^10.0.1",
+    "eslint-plugin-prettier": "^5.2.2",
+    "globals": "^17.0.0",
+    "prettier": "^3.4.2",
+    "prettier-plugin-tailwindcss": "0.7.2",
     "tsx": "^4.21.0",
-    "typescript": "5.9.3"
+    "typescript": "5.9.3",
+    "typescript-eslint": "^8.20.0"
   },
   "packageManager": "pnpm@10.25.0"
 }
