@@ -1,6 +1,6 @@
 # The land of mind
 
-### Application Structure:
+## Application Structure
 
 - Login with username & password
 - Land
@@ -14,7 +14,7 @@
     - Add/Edit (Title, Description, Category)
   - Profile (Analysis (Todos, Habits tracker, Experiences level), Theme, Logout)
 
-### For later:
+## For later
 
 - Login with Google
 - AI (Floating button)
